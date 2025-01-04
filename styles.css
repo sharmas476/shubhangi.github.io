@@ -1034,24 +1034,6 @@ input:focus {
     width: 206px;
 }
 
-.home-page .title-xVxyAW {
-    -webkit-text-stroke: 1.5px var(--white);
-    background-color: transparent;
-    color: var(--white);
-    font-family: var(--font-family-public_sans);
-    font-size: 113px;
-    font-style: normal;
-    font-weight: 900;
-    height: auto;
-    left: 154px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 376px;
-    white-space: nowrap;
-    width: 1131px;
-}
 
 .home-page .frame-3-xVxyAW {
     align-items: center;
@@ -1698,20 +1680,6 @@ input:focus {
     position: absolute;
     top: 96px;
     width: 572px;
-}
-
-.home-page .eyes-on-ustime-to-lock-them-in-q0Vv36 {
-    -webkit-text-stroke: 1.5px var(--white);
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-left: -1.50px;
-    margin-right: -205.50px;
-    margin-top: -2.50px;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
-    width: fit-content;
 }
 
 .home-page .lets-stay-connected-q0Vv36 {
@@ -2898,7 +2866,7 @@ input:focus {
 }
 
 .home-page .title-xVxyAW {
-  -webkit-text-stroke: 1.5px var(--white);
+  color: var(--white);
   background-color: transparent;
   color: var(--white);
   font-family: var(--font-family-public_sans);
@@ -3652,7 +3620,7 @@ color:var(--illustrationnew);
 }
 
 .home-page .eyes-on-ustime-to-lock-them-in-q0Vv36 {
-  -webkit-text-stroke: 1.5px var(--white);
+  color: var(--white);
   background-color: transparent;
   letter-spacing: 0.00px;
   line-height: normal;
@@ -4724,7 +4692,7 @@ input:focus {
 }
 
 .work-pageu95user-first-creations .eyes-on-ustime-to-lock-them-in-2cxekF {
-  -webkit-text-stroke: 1.5px var(--white);
+  color:  var(--white);
   background-color: transparent;
   letter-spacing: 0.00px;
   line-height: normal;
