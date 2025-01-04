@@ -97,79 +97,6 @@ body[mode='code'] [data-id]:hover {
     transform: none !important;
 }
 
-/* ANIMA BUTTONS */
-.an-button {
-    position: relative;
-    height: 28px;
-    padding: 0 20px;
-    font-size: 14px;
-    border-radius: 4px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    transition-property: all;
-    transition-duration: 100ms;
-    appearance: none;
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.2s ease;
-    border-width: 0;
-}
-
-.an-button>div {
-    width: 100%;
-}
-
-.an-button.primary {
-    background: #ff6250;
-    color: #ffffff;
-}
-
-.an-button.primary:hover:not(:disabled) {
-    background: #e2412e;
-}
-
-.an-button.secondary {
-    background: transparent;
-    border: 1px solid #ff6250;
-    color: #ff6250;
-}
-
-.an-button.secondary:hover:not(:disabled) {
-    color: #ffffff;
-    background: #ff6250;
-}
-
-.an-button.rounded {
-    border-radius: 100px;
-}
-
-.an-button:disabled {
-    opacity: 0.5;
-}
-
-.an-button:disabled {
-    cursor: default;
-}
-
-.an-button:active,
-.an-button:focus {
-    outline: none;
-}
-
-.hotspot {
-    position: absolute;
-    border: 1px solid #2a9fd8;
-    background: rgba(0, 173, 255, 0.54);
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-}
-
-
-
 .screen textarea:focus,
 .screen input:focus {
     outline: none;
@@ -1702,28 +1629,6 @@ input:focus {
     position: absolute;
     top: 276px;
     width: 410px;
-}
-
-.home-page .shubhisharma0708gmailcom-Q1nwZl {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: 26px;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .frame-40-Q1nwZl {
-    align-items: flex-start;
-    align-self: stretch;
-    background-color: transparent;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
-    width: 100%;
 }
 
 .home-page .vector-5-RLlvuf {
@@ -3675,6 +3580,8 @@ color:var(--illustrationnew);
   gap: 12px;
   position: relative;
   width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid #343D4E;
 }
 
 .home-page .vector-5-RLlvuf {

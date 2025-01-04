@@ -1,29 +1,7 @@
 <html>
 
 <head>
-    <style type="text/css">
-        .turbo-progress-bar {
-            position: fixed;
-            display: block;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: #0076ff;
-            z-index: 9999;
-            transition:
-                width 300ms ease-out,
-                opacity 150ms 150ms ease-in;
-            transform: translate3d(0, 0, 0);
-        }
-    </style>
     <style id="st_globalStyles">
-        /* MEDIA QUERIES */
-        .anima-desktop-only {
-            @media (max-width: 768px) {
-                display: none !important;
-            }
-        }
-
         /* SCROLLBAR */
 
         [dark-scroll]::-webkit-scrollbar {
@@ -45,13 +23,6 @@
             background-color: #5a5a5a;
         }
 
-        /* LOAD PROGRESS */
-
-        .turbolinks-progress-bar {
-            height: 3px;
-            background-color: #ff6250;
-        }
-
         /* GROUPING */
 
         [data-id].ui-selecting {
@@ -64,125 +35,14 @@
 
         /* CURSOR */
 
-        body[mode='comments'] * {
-            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K') 0 24,
-                auto !important;
-        }
-
-        body[mode='code'] [data-id]:not(.hidden) {
-            cursor: default;
-        }
-
-        /* default node state */
-
-        body[mode='code'] [data-id]:not(.hidden),
-        body[mode='comments'] [data-id]:not(.hidden) {
-            pointer-events: all;
-        }
-
-        /* is_image */
-
-        body[mode='code'] [data-id].is_image [data-id],
-        body[mode='comments'] [data-id].is_image [data-id] {
-            pointer-events: none !important;
-        }
-
-        /* without a data-id or ignored */
-
-        [data-id].ignore,
-        body[mode='code'] *:not([data-id]) {
-            pointer-events: none !important;
-        }
-
-        /* disable transforms for ignored elements */
-
-
-        body[mode='code'] [data-id]:hover {
-            transform: none !important;
-        }
-
-        /* ANIMA BUTTONS */
-        .an-button {
-            position: relative;
-            height: 28px;
-            padding: 0 20px;
-            font-size: 14px;
-            border-radius: 4px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            vertical-align: middle;
-            white-space: nowrap;
-            transition-property: all;
-            transition-duration: 100ms;
-            appearance: none;
-            cursor: pointer;
-            user-select: none;
-            transition: all 0.2s ease;
-            border-width: 0;
-        }
-
-        .an-button>div {
-            width: 100%;
-        }
-
-        .an-button.primary {
-            background: #ff6250;
-            color: #ffffff;
-        }
-
-        .an-button.primary:hover:not(:disabled) {
-            background: #e2412e;
-        }
-
-        .an-button.secondary {
-            background: transparent;
-            border: 1px solid #ff6250;
-            color: #ff6250;
-        }
-
-        .an-button.secondary:hover:not(:disabled) {
-            color: #ffffff;
-            background: #ff6250;
-        }
-
-        .an-button.rounded {
-            border-radius: 100px;
-        }
-
-        .an-button:disabled {
-            opacity: 0.5;
-        }
-
-        .an-button:disabled {
-            cursor: default;
-        }
-
-        .an-button:active,
-        .an-button:focus {
-            outline: none;
-        }
     </style>
+    
+    <link rel="stylesheet" href="tooltip.css" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=1440, maximum-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta name="og:type" content="website">
     <meta name="twitter:card" content="photo">
-    <script id="anima-load-script" src="load.js"></script>
-    <script id="anima-hotspots-script" src="hotspots.js"></script>
-    <style id="hotspots-styles">
-        .hotspot {
-            position: absolute;
-            border: 1px solid #2a9fd8;
-            background: rgba(0, 173, 255, 0.54);
-            opacity: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-    </style>
-    <script id="s_turbo" src="https://animaapp.s3.amazonaws.com/static/turbo.es2017-umd.js"></script>
-    <script id="anima-overrides-script" src="overrides.js"></script>
-    <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
     <style>
         @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
@@ -2490,6 +2350,8 @@
             gap: 12px;
             position: relative;
             width: 100%;
+            padding-top: 10px;
+            border-top: 1px solid #343D4E;
         }
 
         .work-pageu95image-editor .vector-5-yCoWdb {
@@ -2591,336 +2453,6 @@
             left: 134px;
             position: absolute;
             top: -3px;
-        }
-    </style>
-    <script id="anime-js-script" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
-        integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
-    <script id="imgloaded-js-script" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <style id="action-links-styles">
-        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
-
-        #anima-interface {
-            transition: all 0.5s ease-in-out;
-        }
-
-        #anima-watermark {
-            transition: all 0.5s ease-in-out;
-            display: none;
-        }
-
-        #anima-watermark-link {
-            position: fixed;
-            bottom: 20px;
-            height: 30px;
-            border-radius: 1000px;
-            background: #3B3B3B;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            user-select: none;
-            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
-            text-decoration: none;
-            color: #fff;
-            padding: 8px 16px 8px 11px;
-            font-family: Mulish, sans-serif;
-            font-size: 12px;
-        }
-
-        #anima-watermark-link .text {
-            margin-left: 6px;
-        }
-
-        .omniview-anima-action-links .link {
-            height: 30px;
-            width: 30px;
-            border-radius: 1000px;
-            background: #3B3B3B;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            user-select: none;
-            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .omniview-anima-action-links #comment-link .text,
-        .omniview-anima-action-links #code-link .text {
-            display: none;
-            font-size: 12px;
-            margin-right: 5px;
-        }
-
-        .omniview-anima-action-links #comment-link:hover,
-        .omniview-anima-action-links #code-link:hover {
-            width: 105px;
-        }
-
-        .omniview-anima-action-links #comment-link.pop-active,
-        .omniview-anima-action-links #code-link.pop-active {
-            width: 105px;
-            background: #FF6250;
-        }
-
-        .omniview-anima-action-links #comment-link.pop-active .text,
-        .omniview-anima-action-links #code-link.pop-active .text {
-            display: block
-        }
-
-        .omniview-anima-action-links #comment-link:hover .text,
-        .omniview-anima-action-links #code-link:hover .text {
-            display: block;
-        }
-
-        .link.navigation {
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            width: auto;
-            height: 32px;
-            color: #fff;
-            font-size: 12px;
-            cursor: default;
-            padding: 0 5px;
-        }
-
-        .link.navigation .icon {
-            margin: 0 6px;
-            fill: none;
-            stroke: currentColor;
-            cursor: pointer;
-        }
-
-        .link.navigation .icon.disabled {
-            opacity: 0.5;
-            cursor: default;
-        }
-
-
-        .link.navigation .home-icon {
-            margin-left: 6px;
-            fill: currentColor;
-            stroke: currentColor;
-            cursor: pointer;
-        }
-
-        .omniview-anima-action-links .restart {
-            height: 30px;
-            padding: 0 12px;
-            background: #3B3B3B;
-            border-radius: 1000px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #f1f1f1;
-            font-size: 12px;
-        }
-
-        .omniview-anima-action-links {
-            display: flex;
-            align-items: center;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-family: Mulish, sans-serif;
-            transition: all 0.5s ease-in-out;
-            opacity: 1;
-        }
-
-        .omniview-anima-action-links>*+* {
-            margin-right: 0;
-            margin-left: 10px;
-        }
-
-        .idle {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        #popoverOpener {
-            position: absolute;
-            left: 50%;
-            margin-left: -10vw;
-            text-align: center;
-            top: 45vh;
-            width: 20vw;
-        }
-
-
-        .popover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1060;
-            display: none;
-            font-family: "sans-serif";
-            font-size: 14px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-        }
-
-        .popover.top {
-            margin-top: -12px
-        }
-
-        .popover.right {
-            margin-left: 10px
-        }
-
-        .popover.bottom {
-            margin-top: 10px
-        }
-
-        .popover.left {
-            margin-left: -10px
-        }
-
-        .popover-title {
-            padding: 8px 14px;
-            margin: 0;
-            font-size: 14px;
-            background-color: #f7f7f7;
-            border-bottom: 1px solid #ebebeb;
-            border-radius: 5px 5px 0 0
-        }
-
-        .popover-content {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            overflow: hidden;
-            font-family: Mulish, sans-serif;
-        }
-
-
-
-        .popover>.arrow,
-        .popover>.arrow:after {
-            position: absolute;
-            display: block;
-            width: 0;
-            height: 0;
-            border-color: transparent;
-            border-style: solid
-        }
-
-        .popover>.arrow {
-            border-width: 11px
-        }
-
-        .popover>.arrow:after {
-            content: "";
-            border-width: 10px
-        }
-
-        .popover.top>.arrow {
-            bottom: -11px;
-            left: 50%;
-            margin-left: -11px;
-            border-top-color: #999;
-            border-top-color: rgba(0, 0, 0, .25);
-            border-bottom-width: 0
-        }
-
-        .popover.top>.arrow:after {
-            bottom: 1px;
-            margin-left: -10px;
-            content: " ";
-            border-top-color: #fff;
-            border-bottom-width: 0
-        }
-
-        .popover.right>.arrow {
-            top: 50%;
-            left: -11px;
-            margin-top: -11px;
-            border-right-color: #999;
-            border-right-color: rgba(0, 0, 0, .25);
-            border-left-width: 0
-        }
-
-        .popover.right>.arrow:after {
-            bottom: -10px;
-            left: 1px;
-            content: " ";
-            border-right-color: #fff;
-            border-left-width: 0
-        }
-
-        .popover.bottom>.arrow {
-            top: -11px;
-            left: 50%;
-            margin-left: -11px;
-            border-top-width: 0;
-            border-bottom-color: #999;
-            border-bottom-color: rgba(0, 0, 0, .25)
-        }
-
-        .popover.bottom>.arrow:after {
-            top: 1px;
-            margin-left: -10px;
-            content: " ";
-            border-top-width: 0;
-            border-bottom-color: #fff
-        }
-
-        .popover.left>.arrow {
-            top: 50%;
-            right: -11px;
-            margin-top: -11px;
-            border-right-width: 0;
-            border-left-color: #999;
-            border-left-color: rgba(0, 0, 0, .25)
-        }
-
-        .popover.left>.arrow:after {
-            right: 1px;
-            bottom: -10px;
-            content: " ";
-            border-right-width: 0;
-            border-left-color: #fff
-        }
-
-
-
-        #anima-comment-popover,
-        #anima-code-popover {
-            background: #333333;
-            color: #fff;
-        }
-
-        #anima-comment-popover.top>.arrow,
-        #anima-comment-popover.top>.arrow:after,
-        #anima-code-popover.top>.arrow:after,
-        #anima-code-popover.top>.arrow {
-            border-top-color: #333;
-        }
-
-        #anima-comment-popover .btn,
-        #anima-code-popover .btn {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: 6px 20px;
-            background: #FF6250;
-            color: #fff;
-            border-radius: 100px;
-            width: max-content;
-            text-decoration: none;
-        }
-
-        @media screen and (max-width: 550px) {
-            #anima-watermark-link {
-                padding: 6px !important;
-            }
-
-            #anima-watermark-link .text {
-                display: none !important;
-            }
         }
     </style>
 </head>
@@ -3267,13 +2799,17 @@
                         stay connected!</div>
                 </div>
                 <div class="frame-41-wyeUu9" data-id="352:119">
-                    <div class="shubhisharma0708gmailcom-l4mwNX leaguespartan-medium-alto-28px" data-id="352:120">
-                        Shubhisharma0708@gmail.com</div>
+                    <div class="tooltip shubhisharma0708gmailcom-l4mwNX leaguespartan-medium-alto-28px" 
+                        data-id="352:120"id="shubhisharma0708gmailcom" onclick="copyEmailId()" onmouseout="outFunc()">
+                        Shubhisharma0708@gmail.com
+                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    </div>
                     <div class="frame-40-l4mwNX" data-id="352:121"><img class="vector-5-yCoWdb" data-id="352:122"
                             src="img/vector-5.svg"
                             anima-src="img/vector-5.svg"
                             alt="Vector 5">
                         <div class="frame-39-yCoWdb" data-id="352:123">
+                            <a href="https://www.behance.net/shubhishar9bbd" target="_blank">
                             <div class="frame-37" data-id="352:124"><img class="fi_3992590-GrS1Sj" data-id="352:125"
                                     src="img/fi-3992590-3.svg"
                                     anima-src="img/fi-3992590-3.svg"
@@ -3281,6 +2817,8 @@
                                 <div class="behance-GrS1Sj leaguespartan-normal-alto-20px" data-id="352:131">Behance
                                 </div>
                             </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/shubhangisharma07/" target="_blank">
                             <div class="frame-37" data-id="352:132"><img class="fi_1051333-LOZGID" data-id="352:133"
                                     src="img/fi-1051333-3.svg"
                                     anima-src="img/fi-1051333-3.svg"
@@ -3288,6 +2826,7 @@
                                 <div class="linkedin-LOZGID leaguespartan-normal-alto-20px" data-id="352:135">Linkedin
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div><img class="vector-wyeUu9" data-id="352:136"
@@ -3297,3 +2836,6 @@
             </div>
         </div>
     </div>
+    <script src="index.js"></script>
+    </body>
+    </html>

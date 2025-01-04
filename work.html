@@ -1,6 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tooltip.css" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=1440, maximum-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
@@ -37,22 +38,26 @@
             connected!</div>
         </div>
         <div class="frame-41-izrCFB" data-id="352:191">
-          <div class="shubhisharma0708gmailcom-ppFMwx leaguespartan-medium-alto-28px" data-id="352:192">
-            Shubhisharma0708@gmail.com</div>
-          <div class="frame-40-ppFMwx" data-id="352:193"><img class="vector-5-0a3f3M" data-id="352:194"
-              src="img/vector-5.svg"
-              alt="Vector 5">
+          <div class="tooltip shubhisharma0708gmailcom-ppFMwx leaguespartan-medium-alto-28px" data-id="352:192"
+            id="shubhisharma0708gmailcom" onclick="copyEmailId()" onmouseout="outFunc()">
+            Shubhisharma0708@gmail.com
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          </div>
+          <div class="frame-40-ppFMwx" data-id="352:193">
             <div class="frame-39-0a3f3M" data-id="352:195">
+              <a href="https://www.behance.net/shubhishar9bbd" target="_blank">
               <div class="frame-37" data-id="352:196"><img class="fi_3992590-hRw8Ku" data-id="352:197"
                   src="img/fi-3992590-2.svg"
                   alt="fi_3992590">
                 <div class="behance-hRw8Ku leaguespartan-normal-alto-20px" data-id="352:203">Behance</div>
               </div>
+              </a>
+              <a href="https://www.linkedin.com/in/shubhangisharma07/">
               <div class="frame-37" data-id="352:204"><img class="fi_1051333-abFsXh" data-id="352:205"
                   src="img/fi-1051333-2.svg"
                   alt="fi_1051333">
                 <div class="linkedin-abFsXh leaguespartan-normal-alto-20px" data-id="352:207">Linkedin</div>
-              </div>
+              </div></a>
             </div>
           </div>
         </div><img class="vector-izrCFB" data-id="352:208"
@@ -145,6 +150,7 @@
         alt="Vector">
     </div>
   </div>
+  <script src="index.js"></script>
 </body>
 
 </html>

@@ -1,31 +1,31 @@
-const https = require('https');
-const fs = require('fs');
-const path = require('path');
+document.addEventListener('DOMContentLoaded', () => {
+    const startDate = new Date('2022-01-01').getTime();
+    
+    const updateTimer = () => {
+        const now = new Date().getTime();
+        const difference = now - startDate;
+        
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        document.querySelector('.timer-text').textContent = 
+            `Designing Since ${days} Days, ${hours} Hours, ${seconds} Seconds`;
+    };
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+});
 
-var har = [];
-
-
-for (var i = 0; i < har.length; i++) {
-    if (har[i].endsWith(".png"))
-        download(har[i], "img");
+function copyEmailId() {
+  var copyText = "shubhisharma0708gmail.com";
+  navigator.clipboard.writeText(copyText);
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied";
 }
 
-function download(url, folder) {
-    const fileName = path.basename(url);
-    const filePath = path.join(folder, fileName);
-
-    https.get(url, (response) => {
-        if (response.statusCode === 200) {
-            const file = fs.createWriteStream(filePath);
-            response.pipe(file);
-            file.on('finish', () => {
-                file.close();
-                console.log(`Downloaded: ${fileName}`);
-            });
-        } else {
-            console.log(`Failed to download: ${fileName}`);
-        }
-    }).on('error', (err) => {
-        console.error(`Error: ${err.message}`);
-    });
+function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
 }
