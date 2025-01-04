@@ -1,0 +1,1858 @@
+<html>
+
+<head>
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        @import url("https://fonts.googleapis.com/css?family=Public+Sans:900,400,600,500,700|League+Spartan:900,400,600,300,800,500,700|Caveat:700|Inter:500,700,600,400|Lato:400,700,800,600|Jomhuria:400|Dosis:500,400,700,800");
+
+
+        @font-face {
+            font-family: "Avenir LT Pro-95Black";
+            font-style: normal;
+            font-weight: 900;
+            src: url('fonts/avenirltproblack.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: "Avenir LT Pro-45Book";
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/avenirltprolight.otf') format("opentype");
+        }
+
+       
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --alto: #dcdcdc;
+            --alto-2: #d9d9d9;
+            --alto-3: #dedcdc;
+            --base-colour: #060b18;
+            --black: #000000;
+            --black-haze: #f6f6f6;
+            --blue-charcoal: #060c18;
+            --blue-chill: #129490;
+            --blue-dianne: #1a434e;
+            --cararra: #ebebeb;
+            --charlotte: #baf3f1;
+            --dove-gray: #707070;
+            --fiord: #424e67;
+            --illustration-purple: #7649b7;
+            --illustrationnew: #dbffc4;
+            --main---lavender: #bb86fc;
+            --mirage: #171d29;
+            --paradiso: #2d7c7a;
+            --pink-swan: #b9b9b9;
+            --quick-silver: #a4a4a4;
+            --rock-blue: #94bcc7;
+            --shark: #26282f;
+            --silver: #c1c1c1;
+            --star-dust: #9c9c9c;
+            --steel-gray: #202632;
+            --thunder: #2d2d2d;
+            --white: #ffffff;
+
+            --font-size-l: 28px;
+            --font-size-m: 24px;
+            --font-size-s: 20px;
+            --font-size-xl: 40px;
+            --font-size-xxl: 48px;
+            --font-size-xxxl: 50px;
+            --font-size-xxxxl: 56px;
+
+            --font-family-avenir_lt_pro-45book: "Avenir LT Pro-45Book", Helvetica;
+            --font-family-avenir_lt_pro-95black: "Avenir LT Pro-95Black", Helvetica;
+            --font-family-caveat: "Caveat", Helvetica;
+            --font-family-dosis: "Dosis", Helvetica;
+            --font-family-inter: "Inter", Helvetica;
+            --font-family-jomhuria: "Jomhuria", Helvetica;
+            --font-family-lato: "Lato", Helvetica;
+            --font-family-league_spartan: "League Spartan", Helvetica;
+            --font-family-public_sans: "Public Sans", Helvetica;
+        }
+
+        .leaguespartan-normal-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-24px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-light-alto-24px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-normal-white-14px {
+            font-family: var(--font-family-league_spartan);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-normal-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-medium-alto-28px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .leaguespartan-extra-bold-studio-56px {
+            color: var(--illustration-purple);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .inter-bold-blue-chill-34px {
+            color: var(--blue-chill);
+            font-family: var(--font-family-inter);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .publicsans-medium-dove-gray-20px {
+            color: var(--dove-gray);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .leaguespartan-light-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .publicsans-semi-bold-white-20px {
+            color: var(--white);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-bold-shark-26px {
+            color: var(--shark);
+            font-family: var(--font-family-league_spartan);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .leaguespartan-medium-shark-20px {
+            color: var(--shark);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .publicsans-black-white-48px {
+            color: var(--white);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .publicsans-semi-bold-studio-32px {
+            color: var(--illustration-purple);
+            font-family: var(--font-family-public_sans);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .publicsans-semi-bold-dove-gray-20px {
+            color: var(--dove-gray);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-normal-snow-flurry-14px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-league_spartan);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-semi-bold-white-40px {
+            color: var(--white);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .lato-normal-silver-24px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-semi-bold-black-haze-24px {
+            color: var(--black-haze);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .lato-normal-thunder-16px {
+            color: var(--thunder);
+            font-family: var(--font-family-lato);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-56px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .caveat-bold-snow-flurry-20px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-caveat);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .leaguespartan-normal-alto-50px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-bold-blue-chill-24px {
+            color: var(--blue-chill);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .lato-normal-silver-16px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-bold-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .lato-extra-bold-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .leaguespartan-light-alto-28px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-medium-alto-32px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .publicsans-normal-star-dust-20px {
+            color: var(--star-dust);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-40px {
+            color: var(--alto-3);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        :root {}
+
+
+        .frame-2 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            justify-content: center;
+            position: relative;
+        }
+
+        .frame-3 {
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .frame-37 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            position: relative;
+        }
+
+        /* screen - work-pageu95the-pledge-on-food-waste */
+
+        .work-pageu95the-pledge-on-food-waste {
+            background-color: var(--base-colour);
+            height: 9069px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 1440px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-6-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 255.5px;
+            filter: blur(214px);
+            ;
+            height: 511px;
+            left: -247px;
+            opacity: 0.3;
+            position: absolute;
+            top: 7488px;
+            width: 511px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-7-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 255.5px;
+            filter: blur(214px);
+            ;
+            height: 511px;
+            left: 1208px;
+            opacity: 0.3;
+            position: absolute;
+            top: 8338px;
+            width: 511px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .x92826101_new-tablet-mockup-3-1-51hFmJ {
+            background-color: transparent;
+            height: 740px;
+            left: 114px;
+            position: absolute;
+            top: 7659px;
+            width: 1212px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .x23126584_202-1-51hFmJ {
+            background-color: transparent;
+            height: 1243px;
+            left: 114px;
+            position: absolute;
+            top: 6179px;
+            width: 1212px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .home-page-3-51hFmJ {
+            background-color: transparent;
+            height: 636px;
+            left: 706px;
+            position: absolute;
+            top: 3448px;
+            width: 603px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-198-51hFmJ {
+            background-color: #fefefe;
+            border-radius: 0px 0px 0px 8px;
+            height: 198px;
+            left: 706px;
+            position: absolute;
+            top: 4067px;
+            width: 603px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-1-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 255.5px;
+            filter: blur(214px);
+            ;
+            height: 511px;
+            left: 1211px;
+            opacity: 0.3;
+            position: absolute;
+            top: 2402px;
+            width: 511px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-4-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 255.5px;
+            filter: blur(214px);
+            ;
+            height: 511px;
+            left: -158px;
+            opacity: 0.3;
+            position: absolute;
+            top: 4296px;
+            width: 511px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-5-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 255.5px;
+            filter: blur(214px);
+            ;
+            height: 511px;
+            left: 1184px;
+            opacity: 0.3;
+            position: absolute;
+            top: 6062px;
+            width: 511px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-2-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 247.5px;
+            filter: blur(214px);
+            ;
+            height: 495px;
+            left: 1175px;
+            opacity: 0.3;
+            position: absolute;
+            top: 175px;
+            width: 495px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-3-51hFmJ {
+            background: linear-gradient(180deg, rgba(47.0000009983778, 143.00000667572021, 199.0000033378601, 0.699999988079071) 0%, rgba(62.00000010430813, 157.0000058412552, 160.00000566244125, 0.699999988079071) 50.999999046325684%, rgba(69.00000348687172, 166.00000530481339, 132.0000073313713, 0.699999988079071) 100%);
+            background-color: transparent;
+            border-radius: 247.5px;
+            filter: blur(214px);
+            ;
+            height: 495px;
+            left: -278px;
+            opacity: 0.3;
+            position: absolute;
+            top: 1234px;
+            width: 495px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-3-51hFmJ {
+            display: flex;
+            justify-content: space-between;
+            left: 114px;
+            position: absolute;
+            top: 60px;
+            width: 1212px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .vector-3dUaKM {
+            background-color: transparent;
+            height: 77.9747314453125px;
+            position: relative;
+            width: 80px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-2-3dUaKM {
+            gap: 36px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-2-m0kpOJ {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .home-JWQOxH {
+            background-color: transparent;
+            cursor: pointer;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-3-m0kpOJ {
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .work-GqpFKJ {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-1-GqpFKJ {
+            background-color: var(--alto-2);
+            border-radius: 3px;
+            height: 6px;
+            position: relative;
+            width: 6px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .contact-m0kpOJ {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .title-51hFmJ {
+            background-color: transparent;
+            color: var(--alto);
+            font-family: var(--font-family-public_sans);
+            font-size: 82px;
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 201px;
+            letter-spacing: 0.00px;
+            line-height: 67px;
+            position: absolute;
+            text-align: center;
+            top: 409px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .the-client-51hFmJ {
+            background-color: transparent;
+            color: var(--alto);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 113px;
+            letter-spacing: 0.00px;
+            line-height: 67px;
+            position: absolute;
+            text-align: center;
+            top: 1714px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ui-screens-51hFmJ {
+            background-color: transparent;
+            color: #ededed;
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 575px;
+            letter-spacing: 0.00px;
+            line-height: 67px;
+            position: absolute;
+            text-align: center;
+            top: 3254px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .the-pledge-on-food-w-51hFmJ {
+            background-color: transparent;
+            height: auto;
+            left: 179px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 524px;
+            width: 1083px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .the-pledge-stands-as-51hFmJ {
+            background-color: transparent;
+            height: auto;
+            left: 531px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: left;
+            top: 1728px;
+            width: 742px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .published-march-28-2024-51hFmJ {
+            background-color: transparent;
+            color: var(--illustrationnew);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+            height: auto;
+            left: 179px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 647px;
+            width: 1083px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .x251740680_e15a2acd-1-51hFmJ {
+            background-color: transparent;
+            height: 808px;
+            left: 178px;
+            object-fit: cover;
+            position: absolute;
+            top: 755px;
+            width: 1084px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .group-1447-51hFmJ {
+            background-color: transparent;
+            height: 553px;
+            left: 271px;
+            position: absolute;
+            top: 2024px;
+            width: 899px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-194-RslXtA {
+            background-color: #2f8fc7;
+            border-radius: 213px 213px 0px 0px;
+            height: 553px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 251px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ellipse-53-RslXtA {
+            background-color: #f2f2f2;
+            border-radius: 108px/107.5px;
+            height: 215px;
+            left: 251px;
+            position: absolute;
+            top: 68px;
+            width: 216px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-195-RslXtA {
+            background-color: #3e9da0;
+            border-radius: 0px 0px 186px 186px;
+            height: 270px;
+            left: 251px;
+            position: absolute;
+            top: 283px;
+            width: 289px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-196-RslXtA {
+            background-color: var(--illustrationnew);
+            border: 1px solid;
+            border-color: var(--white);
+            border-radius: 177px 0px 177px 0px;
+            height: 544px;
+            left: 540px;
+            position: absolute;
+            top: 9px;
+            width: 114px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-197-RslXtA {
+            background-color: #45a684;
+            border-radius: 19px;
+            height: 253px;
+            left: 654px;
+            position: absolute;
+            top: 300px;
+            width: 245px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-477-RslXtA {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            left: 26px;
+            position: absolute;
+            top: 458px;
+            width: 142px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .curious-blue-mscDtP {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .x2-f8-fc7-mscDtP {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-478-RslXtA {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            left: 280px;
+            position: absolute;
+            top: 147px;
+            width: 142px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .concrete-C90HDy {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .f2-f2-f2-C90HDy {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-481-RslXtA {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+            left: 730px;
+            position: absolute;
+            top: 478px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .ocean-green-UMJ9Oj {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .x45-a684-UMJ9Oj {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-479-RslXtA {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+            left: 351px;
+            position: absolute;
+            top: 458px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .keppel-9xAscf {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .x3-e9-da0-9xAscf {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-480-RslXtA {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+            left: 524px;
+            position: absolute;
+            top: 147px;
+            transform: rotate(-90.00deg);
+        }
+
+        .work-pageu95the-pledge-on-food-waste .snow-flurry-iitZBD {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .dbffc4-iitZBD {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-6-51hFmJ {
+            height: 335px;
+            left: 271px;
+            top: 2658px;
+            width: 899px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-482-51hFmJ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 331px;
+            position: absolute;
+            top: 2763px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .avenir-tbmfZY {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--pink-swan);
+            font-family: var(--font-family-avenir_lt_pro-95black);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 900;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .aa-bb-cc-dd-ee-ff-gg-tbmfZY {
+            background-color: transparent;
+            color: var(--pink-swan);
+            font-family: var(--font-family-avenir_lt_pro-45book);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: relative;
+            text-align: left;
+            width: 390px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .aa-51hFmJ {
+            background-color: transparent;
+            height: 133px;
+            left: 842px;
+            position: absolute;
+            top: 2747px;
+            width: 227px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .image-51hFmJ {
+            height: 259px;
+            left: 733px;
+            top: 4077px;
+            width: 583px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .image-o22hjT {
+            height: 250px;
+            left: 676px;
+            top: 3428px;
+            width: 360px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .home-page-new-2-51hFmJ {
+            background-color: transparent;
+            height: 1146px;
+            left: 114px;
+            object-fit: cover;
+            position: absolute;
+            top: 3428px;
+            width: 534px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .accredited-consultants-1-51hFmJ {
+            background-color: transparent;
+            height: 1034px;
+            left: 114px;
+            position: absolute;
+            top: 4660px;
+            width: 586px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .product-page-1-51hFmJ {
+            background-color: transparent;
+            height: 1469px;
+            left: 740px;
+            position: absolute;
+            top: 4425px;
+            width: 586px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .use-of-clean-layouts-51hFmJ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: left;
+            top: 6017px;
+            width: 795px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .big-love-for-the-watch-time-51hFmJ {
+            background-color: transparent;
+            color: var(--illustrationnew);
+            font-family: var(--font-family-public_sans);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 477px;
+            letter-spacing: 0.00px;
+            line-height: 67px;
+            position: absolute;
+            text-align: center;
+            top: 7749px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .vector-51hFmJ {
+            background-color: transparent;
+            height: 67px;
+            left: 915px;
+            position: absolute;
+            top: 7744px;
+            width: 59px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .group-1448-51hFmJ {
+            background-color: transparent;
+            height: 454px;
+            left: 114px;
+            position: absolute;
+            top: 8528px;
+            width: 1212px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-6-IqDSZx {
+            height: 454px;
+            left: 0px;
+            top: 0px;
+            width: 1212px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-38-IqDSZx {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            left: 48px;
+            position: absolute;
+            top: 96px;
+            width: 572px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .eyes-on-ustime-to-lock-them-in-iyzycM {
+            -webkit-text-stroke: 1.5px var(--white);
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-left: -1.50px;
+            margin-right: -205.50px;
+            margin-top: -2.50px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .lets-stay-connected-iyzycM {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-left: -1.50px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-41-IqDSZx {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 754px;
+            position: absolute;
+            top: 276px;
+            width: 410px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .shubhisharma0708gmailcom-VvRjEV {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-40-VvRjEV {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .vector-5-ff2wTh {
+            background-color: transparent;
+            height: 1px;
+            margin-top: -0.50px;
+            object-fit: cover;
+            position: relative;
+            width: 410px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .frame-39-ff2wTh {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 24px;
+            position: relative;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .fi_3992590-w7KuD9 {
+            background-color: transparent;
+            height: 32px;
+            position: relative;
+            width: 32px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .behance-w7KuD9 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .fi_1051333-lrXovF {
+            background-color: transparent;
+            height: 32px;
+            position: relative;
+            width: 32px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .linkedin-lrXovF {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .vector-IqDSZx {
+            background-color: transparent;
+            height: 83px;
+            left: 630px;
+            position: absolute;
+            top: 165px;
+            width: 112px;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .image {
+            background-color: transparent;
+            position: absolute;
+        }
+
+        .work-pageu95the-pledge-on-food-waste .rectangle-6 {
+            background-color: var(--mirage);
+            border-radius: 32px;
+            position: absolute;
+        }
+    </style>
+    <script id="anime-js-script" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
+        integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+    <script id="imgloaded-js-script" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <style id="action-links-styles">
+        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+        #anima-interface {
+            transition: all 0.5s ease-in-out;
+        }
+
+        #anima-watermark {
+            transition: all 0.5s ease-in-out;
+            display: none;
+        }
+
+        #anima-watermark-link {
+            position: fixed;
+            bottom: 20px;
+            height: 30px;
+            border-radius: 1000px;
+            background: #3B3B3B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 16px 8px 11px;
+            font-family: Mulish, sans-serif;
+            font-size: 12px;
+        }
+
+        #anima-watermark-link .text {
+            margin-left: 6px;
+        }
+
+        .omniview-anima-action-links .link {
+            height: 30px;
+            width: 30px;
+            border-radius: 1000px;
+            background: #3B3B3B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .omniview-anima-action-links #comment-link .text,
+        .omniview-anima-action-links #code-link .text {
+            display: none;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .omniview-anima-action-links #comment-link:hover,
+        .omniview-anima-action-links #code-link:hover {
+            width: 105px;
+        }
+
+        .omniview-anima-action-links #comment-link.pop-active,
+        .omniview-anima-action-links #code-link.pop-active {
+            width: 105px;
+            background: #FF6250;
+        }
+
+        .omniview-anima-action-links #comment-link.pop-active .text,
+        .omniview-anima-action-links #code-link.pop-active .text {
+            display: block
+        }
+
+        .omniview-anima-action-links #comment-link:hover .text,
+        .omniview-anima-action-links #code-link:hover .text {
+            display: block;
+        }
+
+        .link.navigation {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            cursor: default;
+            padding: 0 5px;
+        }
+
+        .link.navigation .icon {
+            margin: 0 6px;
+            fill: none;
+            stroke: currentColor;
+            cursor: pointer;
+        }
+
+        .link.navigation .icon.disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+
+        .link.navigation .home-icon {
+            margin-left: 6px;
+            fill: currentColor;
+            stroke: currentColor;
+            cursor: pointer;
+        }
+
+        .omniview-anima-action-links .restart {
+            height: 30px;
+            padding: 0 12px;
+            background: #3B3B3B;
+            border-radius: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #f1f1f1;
+            font-size: 12px;
+        }
+
+        .omniview-anima-action-links {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Mulish, sans-serif;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .omniview-anima-action-links>*+* {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        .idle {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #popoverOpener {
+            position: absolute;
+            left: 50%;
+            margin-left: -10vw;
+            text-align: center;
+            top: 45vh;
+            width: 20vw;
+        }
+
+
+        .popover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1060;
+            display: none;
+            font-family: "sans-serif";
+            font-size: 14px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+        .popover.top {
+            margin-top: -12px
+        }
+
+        .popover.right {
+            margin-left: 10px
+        }
+
+        .popover.bottom {
+            margin-top: 10px
+        }
+
+        .popover.left {
+            margin-left: -10px
+        }
+
+        .popover-title {
+            padding: 8px 14px;
+            margin: 0;
+            font-size: 14px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ebebeb;
+            border-radius: 5px 5px 0 0
+        }
+
+        .popover-content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            font-family: Mulish, sans-serif;
+        }
+
+
+
+        .popover>.arrow,
+        .popover>.arrow:after {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid
+        }
+
+        .popover>.arrow {
+            border-width: 11px
+        }
+
+        .popover>.arrow:after {
+            content: "";
+            border-width: 10px
+        }
+
+        .popover.top>.arrow {
+            bottom: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-color: #999;
+            border-top-color: rgba(0, 0, 0, .25);
+            border-bottom-width: 0
+        }
+
+        .popover.top>.arrow:after {
+            bottom: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-color: #fff;
+            border-bottom-width: 0
+        }
+
+        .popover.right>.arrow {
+            top: 50%;
+            left: -11px;
+            margin-top: -11px;
+            border-right-color: #999;
+            border-right-color: rgba(0, 0, 0, .25);
+            border-left-width: 0
+        }
+
+        .popover.right>.arrow:after {
+            bottom: -10px;
+            left: 1px;
+            content: " ";
+            border-right-color: #fff;
+            border-left-width: 0
+        }
+
+        .popover.bottom>.arrow {
+            top: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-width: 0;
+            border-bottom-color: #999;
+            border-bottom-color: rgba(0, 0, 0, .25)
+        }
+
+        .popover.bottom>.arrow:after {
+            top: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-width: 0;
+            border-bottom-color: #fff
+        }
+
+        .popover.left>.arrow {
+            top: 50%;
+            right: -11px;
+            margin-top: -11px;
+            border-right-width: 0;
+            border-left-color: #999;
+            border-left-color: rgba(0, 0, 0, .25)
+        }
+
+        .popover.left>.arrow:after {
+            right: 1px;
+            bottom: -10px;
+            content: " ";
+            border-right-width: 0;
+            border-left-color: #fff
+        }
+
+
+
+        #anima-comment-popover,
+        #anima-code-popover {
+            background: #333333;
+            color: #fff;
+        }
+
+        #anima-comment-popover.top>.arrow,
+        #anima-comment-popover.top>.arrow:after,
+        #anima-code-popover.top>.arrow:after,
+        #anima-code-popover.top>.arrow {
+            border-top-color: #333;
+        }
+
+        #anima-comment-popover .btn,
+        #anima-code-popover .btn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 6px 20px;
+            background: #FF6250;
+            color: #fff;
+            border-radius: 100px;
+            width: max-content;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 550px) {
+            #anima-watermark-link {
+                padding: 6px !important;
+            }
+
+            #anima-watermark-link .text {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0px; background: rgb(6, 11, 24); overflow-x: hidden;" dark-scroll=""><input type="hidden"
+        id="anPageName" name="page" value="work-pageu95the-pledge-on-food-waste">
+    <div class="container-center-horizontal">
+        <div class="work-pageu95the-pledge-on-food-waste screen " data-id="327:114">
+            <div class="ellipse-6-51hFmJ" data-id="363:92"></div>
+            <div class="ellipse-7-51hFmJ" data-id="363:93"></div><img class="x92826101_new-tablet-mockup-3-1-51hFmJ"
+                data-id="351:111"
+                src="img/92826101-new-tablet-mockup--3-1.png"
+                anima-src="img/92826101-new-tablet-mockup--3-1.png"
+                alt="92826101_new Tablet Mockup -3 1"><img class="x23126584_202-1-51hFmJ" data-id="350:101"
+                src="img/23126584-202-1.png"
+                anima-src="img/23126584-202-1.png"
+                alt="23126584_202 1"><img class="home-page-3-51hFmJ" data-id="344:842"
+                src="img/home-page-3.png"
+                anima-src="img/home-page-3.png"
+                alt="Home Page 3">
+            <div class="rectangle-198-51hFmJ" data-id="344:914"></div>
+            <div class="ellipse-1-51hFmJ" data-id="344:89"></div>
+            <div class="ellipse-4-51hFmJ" data-id="363:90"></div>
+            <div class="ellipse-5-51hFmJ" data-id="363:91"></div>
+            <div class="ellipse-2-51hFmJ" data-id="344:91"></div>
+            <div class="ellipse-3-51hFmJ" data-id="344:831"></div>
+            <div class="frame-3-51hFmJ frame-3" data-id="327:115"><img class="vector-3dUaKM" data-id="327:116"
+                    src="img/vector-1.svg"
+                    anima-src="img/vector-1.svg"
+                    alt="Vector">
+                <div class="frame-2-3dUaKM frame-2" data-id="332:93">
+                    <div class="frame-2-m0kpOJ frame-2" data-id="332:94"><a href="home-page">
+                            <div class="home-JWQOxH publicsans-semi-bold-dove-gray-20px" data-id="332:95"
+                                data-hotspot-id="hp-0">Home</div>
+                        </a></div>
+                    <div class="frame-3-m0kpOJ frame-3" data-id="332:96">
+                        <div class="work-GqpFKJ publicsans-semi-bold-white-20px" data-id="332:97">Work</div>
+                        <div class="ellipse-1-GqpFKJ" data-id="332:98"></div>
+                    </div>
+                    <div class="contact-m0kpOJ publicsans-medium-dove-gray-20px" data-id="332:99">Contact</div>
+                </div>
+            </div>
+            <h1 class="title-51hFmJ" data-id="327:122">The Pledge On Food Waste</h1>
+            <div class="the-client-51hFmJ" data-id="344:77">The Client</div>
+            <div class="ui-screens-51hFmJ" data-id="344:840">UI Screens</div>
+            <p class="the-pledge-on-food-w-51hFmJ leaguespartan-light-alto-24px" data-id="327:124">The PLEDGE on Food
+                Waste, a leading certification and benchmarking system, wanted to redesign their website for a more
+                modern and engaging look. The focus was on improving usability, showcasing their mission, and creating a
+                seamless user experience to amplify their global impact.</p>
+            <p class="the-pledge-stands-as-51hFmJ leaguespartan-light-alto-24px" data-id="344:79">The PLEDGE stands as a
+                global certification solution, integrating best practices to reduce waste from procurement to disposal.
+                At their core, they prioritize sustainability, empowerment, collaboration, innovation, community, and
+                transparency as the cornerstones of approach.</p>
+            <div class="published-march-28-2024-51hFmJ" data-id="327:125">Published: March 28, 2024</div><img
+                class="x251740680_e15a2acd-1-51hFmJ" data-id="335:101"
+                src="img/251740680-e15a2acd-1075-4cb4-93fc-6d762887f630-1.png"
+                anima-src="img/251740680-e15a2acd-1075-4cb4-93fc-6d762887f630-1.png"
+                alt="251740680_e15a2acd-1075-4cb4-93fc-6d762887f630 1">
+            <div class="group-1447-51hFmJ" data-id="344:830">
+                <div class="rectangle-194-RslXtA" data-id="344:809"></div>
+                <div class="ellipse-53-RslXtA" data-id="344:810"></div>
+                <div class="rectangle-195-RslXtA" data-id="344:811"></div>
+                <div class="rectangle-196-RslXtA" data-id="344:812"></div>
+                <div class="rectangle-197-RslXtA" data-id="344:813"></div>
+                <div class="frame-477-RslXtA" data-id="344:817">
+                    <div class="curious-blue-mscDtP leaguespartan-bold-shark-26px" data-id="344:815">Curious Blue</div>
+                    <div class="x2-f8-fc7-mscDtP leaguespartan-medium-shark-20px" data-id="344:816">#2F8FC7</div>
+                </div>
+                <div class="frame-478-RslXtA" data-id="344:818">
+                    <div class="concrete-C90HDy leaguespartan-bold-shark-26px" data-id="344:819">Concrete</div>
+                    <div class="f2-f2-f2-C90HDy leaguespartan-medium-shark-20px" data-id="344:820">#F2F2F2</div>
+                </div>
+                <div class="frame-481-RslXtA" data-id="344:827">
+                    <div class="ocean-green-UMJ9Oj leaguespartan-bold-shark-26px" data-id="344:828">Ocean Green</div>
+                    <div class="x45-a684-UMJ9Oj leaguespartan-medium-shark-20px" data-id="344:829">#45A684</div>
+                </div>
+                <div class="frame-479-RslXtA" data-id="344:821">
+                    <div class="keppel-9xAscf leaguespartan-bold-shark-26px" data-id="344:822">Keppel</div>
+                    <div class="x3-e9-da0-9xAscf leaguespartan-medium-shark-20px" data-id="344:823">#3E9DA0</div>
+                </div>
+                <div class="frame-480-RslXtA" data-id="344:824">
+                    <div class="snow-flurry-iitZBD leaguespartan-bold-shark-26px" data-id="344:825">Snow Flurry</div>
+                    <div class="dbffc4-iitZBD leaguespartan-medium-shark-20px" data-id="344:826">#DBFFC4</div>
+                </div>
+            </div>
+            <div class="rectangle-6-51hFmJ rectangle-6" data-id="344:833"></div>
+            <div class="frame-482-51hFmJ" data-id="344:838">
+                <div class="avenir-tbmfZY" data-id="344:837">Avenir</div>
+                <p class="aa-bb-cc-dd-ee-ff-gg-tbmfZY" data-id="344:836">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp
+                    Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>1 2 3 4 5 6 7 8 9 0</p>
+            </div><img class="aa-51hFmJ" data-id="344:835"
+                src="img/aa.svg"
+                anima-src="img/aa.svg"
+                alt="Aa"><img class="image-51hFmJ image" data-id="344:913"
+                src="img/image.png"
+                anima-src="img/image.png"
+                alt="Image"><img class="image-o22hjT image" data-id="344:1184"
+                src="img/image-1@2x.png"
+                anima-src="img/image-1@2x.png"
+                alt="Image"><img class="home-page-new-2-51hFmJ" data-id="345:98"
+                src="img/home-page-new-2.png"
+                anima-src="img/home-page-new-2.png"
+                alt="Home Page new 2"><img class="accredited-consultants-1-51hFmJ" data-id="350:103"
+                src="img/accredited-consultants-1.png"
+                anima-src="img/accredited-consultants-1.png"
+                alt="Accredited Consultants 1"><img class="product-page-1-51hFmJ" data-id="350:104"
+                src="img/product-page-1-1.png"
+                anima-src="img/product-page-1-1.png"
+                alt="Product Page 1">
+            <p class="use-of-clean-layouts-51hFmJ leaguespartan-normal-alto-24px" data-id="350:105">Use of clean layouts
+                and intuitive navigation to guide users seamlessly while incorporating bold typography and
+                sustainable-themed visuals to emphasize their focus on combating food waste.</p>
+            <p class="big-love-for-the-watch-time-51hFmJ" data-id="351:108">Big love for the watch time...</p><img
+                class="vector-51hFmJ" data-id="351:109"
+                src="img/vector.svg"
+                anima-src="img/vector.svg"
+                alt="Vector">
+            <div class="group-1448-51hFmJ" data-id="352:162">
+                <div class="rectangle-6-IqDSZx rectangle-6" data-id="352:163"></div>
+                <div class="frame-38-IqDSZx" data-id="352:164">
+                    <p class="eyes-on-ustime-to-lock-them-in-iyzycM publicsans-black-white-48px" data-id="352:165">Eyes
+                        on us—time to lock them in!</p>
+                    <div class="lets-stay-connected-iyzycM publicsans-semi-bold-studio-32px" data-id="352:166">Let’s
+                        stay connected!</div>
+                </div>
+                <div class="frame-41-IqDSZx" data-id="352:167">
+                    <div class="shubhisharma0708gmailcom-VvRjEV leaguespartan-medium-alto-28px" data-id="352:168">
+                        Shubhisharma0708@gmail.com</div>
+                    <div class="frame-40-VvRjEV" data-id="352:169"><img class="vector-5-ff2wTh" data-id="352:170"
+                            src="img/vector-5.svg"
+                            anima-src="img/vector-5.svg"
+                            alt="Vector 5">
+                        <div class="frame-39-ff2wTh" data-id="352:171">
+                            <div class="frame-37" data-id="352:172"><img class="fi_3992590-w7KuD9" data-id="352:173"
+                                    src="img/fi-3992590.svg"
+                                    anima-src="img/fi-3992590.svg"
+                                    alt="fi_3992590">
+                                <div class="behance-w7KuD9 leaguespartan-normal-alto-20px" data-id="352:179">Behance
+                                </div>
+                            </div>
+                            <div class="frame-37" data-id="352:180"><img class="fi_1051333-lrXovF" data-id="352:181"
+                                    src="img/fi-1051333.svg"
+                                    anima-src="img/fi-1051333.svg"
+                                    alt="fi_1051333">
+                                <div class="linkedin-lrXovF leaguespartan-normal-alto-20px" data-id="352:183">Linkedin
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><img class="vector-IqDSZx" data-id="352:184"
+                    src="img/vector-2.svg"
+                    anima-src="img/vector-2.svg"
+                    alt="Vector">
+            </div>
+        </div>
+    </div>

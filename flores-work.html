@@ -1,0 +1,2702 @@
+<html>
+
+<head>
+    
+    <style id="st_globalStyles">
+
+        [dark-scroll]::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-track-piece {
+            background-color: #2b2b2b;
+            border: 1px solid #1d1d1d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb {
+            height: 10px;
+            background-color: #4d4d4d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb:hover {
+            background-color: #5a5a5a;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1440, maximum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="photo">
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        @import url("https://fonts.googleapis.com/css?family=Public+Sans:900,400,600,500,700|League+Spartan:900,400,600,300,800,500,700|Caveat:700|Inter:500,700,600,400|Lato:400,700,800,600|Jomhuria:400|Dosis:500,400,700,800");
+
+
+        @font-face {
+            font-family: "Avenir LT Pro-95Black";
+            font-style: normal;
+            font-weight: 900;
+            src: url('fonts/avenirltproblack.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: "Avenir LT Pro-45Book";
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/avenirltprolight.otf') format("opentype");
+        }
+
+       
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --alto: #dcdcdc;
+            --alto-2: #d9d9d9;
+            --alto-3: #dedcdc;
+            --base-colour: #060b18;
+            --black: #000000;
+            --black-haze: #f6f6f6;
+            --blue-charcoal: #060c18;
+            --blue-chill: #129490;
+            --blue-dianne: #1a434e;
+            --cararra: #ebebeb;
+            --charlotte: #baf3f1;
+            --dove-gray: #707070;
+            --fiord: #424e67;
+            --illustration-purple: #7649b7;
+            --illustrationnew: #dbffc4;
+            --main---lavender: #bb86fc;
+            --mirage: #171d29;
+            --paradiso: #2d7c7a;
+            --pink-swan: #b9b9b9;
+            --quick-silver: #a4a4a4;
+            --rock-blue: #94bcc7;
+            --shark: #26282f;
+            --silver: #c1c1c1;
+            --star-dust: #9c9c9c;
+            --steel-gray: #202632;
+            --thunder: #2d2d2d;
+            --white: #ffffff;
+
+            --font-size-l: 28px;
+            --font-size-m: 24px;
+            --font-size-s: 20px;
+            --font-size-xl: 40px;
+            --font-size-xxl: 48px;
+            --font-size-xxxl: 50px;
+            --font-size-xxxxl: 56px;
+
+            --font-family-avenir_lt_pro-45book: "Avenir LT Pro-45Book", Helvetica;
+            --font-family-avenir_lt_pro-95black: "Avenir LT Pro-95Black", Helvetica;
+            --font-family-caveat: "Caveat", Helvetica;
+            --font-family-dosis: "Dosis", Helvetica;
+            --font-family-inter: "Inter", Helvetica;
+            --font-family-jomhuria: "Jomhuria", Helvetica;
+            --font-family-lato: "Lato", Helvetica;
+            --font-family-league_spartan: "League Spartan", Helvetica;
+            --font-family-public_sans: "Public Sans", Helvetica;
+        }
+
+        .leaguespartan-normal-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-24px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-light-alto-24px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-normal-white-14px {
+            font-family: var(--font-family-league_spartan);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-normal-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-medium-alto-28px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .leaguespartan-extra-bold-studio-56px {
+            color: var(--illustration-purple);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .inter-bold-blue-chill-34px {
+            color: var(--blue-chill);
+            font-family: var(--font-family-inter);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .publicsans-medium-dove-gray-20px {
+            color: var(--dove-gray);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .leaguespartan-light-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .publicsans-semi-bold-white-20px {
+            color: var(--white);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-bold-shark-26px {
+            color: var(--shark);
+            font-family: var(--font-family-league_spartan);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .leaguespartan-medium-shark-20px {
+            color: var(--shark);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .publicsans-black-white-48px {
+            color: var(--white);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .publicsans-semi-bold-studio-32px {
+            color: var(--illustration-purple);
+            font-family: var(--font-family-public_sans);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .publicsans-semi-bold-dove-gray-20px {
+            color: var(--dove-gray);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-normal-snow-flurry-14px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-league_spartan);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-semi-bold-white-40px {
+            color: var(--white);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .lato-normal-silver-24px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-semi-bold-black-haze-24px {
+            color: var(--black-haze);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .lato-normal-thunder-16px {
+            color: var(--thunder);
+            font-family: var(--font-family-lato);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-56px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .caveat-bold-snow-flurry-20px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-caveat);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .leaguespartan-normal-alto-50px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-bold-blue-chill-24px {
+            color: var(--blue-chill);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .lato-normal-silver-16px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-bold-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .lato-extra-bold-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .leaguespartan-light-alto-28px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-medium-alto-32px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .publicsans-normal-star-dust-20px {
+            color: var(--star-dust);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-40px {
+            color: var(--alto-3);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .frame-2 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            justify-content: center;
+            position: relative;
+        }
+
+        .frame-3 {
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .frame-37 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            position: relative;
+        }
+
+        /* screen - work-pageu95flores-cart */
+
+        .work-pageu95flores-cart {
+            background-color: var(--base-colour);
+            height: 18278px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 1440px;
+        }
+
+        .work-pageu95flores-cart .frame-3-5v6drZ {
+            display: flex;
+            justify-content: space-between;
+            left: 114px;
+            position: absolute;
+            top: 60px;
+            width: 1212px;
+        }
+
+        .work-pageu95flores-cart .vector-sGp1xx {
+            background-color: transparent;
+            height: 77.9747314453125px;
+            position: relative;
+            width: 80px;
+        }
+
+        .work-pageu95flores-cart .frame-2-sGp1xx {
+            gap: 36px;
+        }
+
+        .work-pageu95flores-cart .frame-2-PBDFc8 {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .work-pageu95flores-cart .home-n8C2Pk {
+            background-color: transparent;
+            cursor: pointer;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95flores-cart .frame-3-PBDFc8 {
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .work-pageu95flores-cart .work-FZUxNb {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95flores-cart .ellipse-1-FZUxNb {
+            background-color: var(--alto-2);
+            border-radius: 3px;
+            height: 6px;
+            position: relative;
+            width: 6px;
+        }
+
+        .work-pageu95flores-cart .contact-PBDFc8 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95flores-cart .title-5v6drZ {
+            background-color: transparent;
+            color: var(--alto);
+            font-family: var(--font-family-public_sans);
+            font-size: 82px;
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 420px;
+            letter-spacing: 0.00px;
+            line-height: 67px;
+            position: absolute;
+            text-align: left;
+            top: 409px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .mockup-1-5v6drZ {
+            background-color: transparent;
+            height: 632px;
+            left: 114px;
+            object-fit: cover;
+            position: absolute;
+            top: 745px;
+            width: 1212px;
+        }
+
+        .work-pageu95flores-cart .the-covid-19-pandemi-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 179px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 524px;
+            width: 1083px;
+        }
+
+        .work-pageu95flores-cart .span1-xmNlJ1 {
+            color: var(--alto);
+            font-size: var(--font-size-m);
+            font-weight: 500;
+        }
+
+        .work-pageu95flores-cart .published-may-8th-2023-5v6drZ {
+            background-color: transparent;
+            color: var(--illustrationnew);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+            height: auto;
+            left: 179px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 647px;
+            width: 1083px;
+        }
+
+        .work-pageu95flores-cart .flores-carts-usp-is-5v6drZ {
+            background-color: transparent;
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 300;
+            height: auto;
+            left: 118px;
+            letter-spacing: 0.00px;
+            line-height: 47px;
+            position: absolute;
+            text-align: left;
+            top: 1525px;
+            width: 1181px;
+        }
+
+        .work-pageu95flores-cart .the-flores-cart-app-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 118px;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: absolute;
+            text-align: left;
+            top: 1831px;
+            width: 1208px;
+        }
+
+        .work-pageu95flores-cart .to-better-understand-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 111px;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: absolute;
+            text-align: left;
+            top: 3048px;
+            width: 1208px;
+        }
+
+        .work-pageu95flores-cart .layer_1-5v6drZ {
+            background-color: transparent;
+            height: 539px;
+            left: 0px;
+            position: absolute;
+            top: 1120px;
+            width: 282px;
+        }
+
+        .work-pageu95flores-cart .samsung-galaxy-s21-phone-mockup-2-5v6drZ {
+            background-color: transparent;
+            height: 685px;
+            left: 309px;
+            position: absolute;
+            top: 2092px;
+            width: 822px;
+        }
+
+        .work-pageu95flores-cart .the-empathize-phase-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 111px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 2960px;
+            width: 629px;
+        }
+
+        .work-pageu95flores-cart .the-define-phase-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 4633px;
+            width: 629px;
+        }
+
+        .work-pageu95flores-cart .the-pain-points-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 5540px;
+            width: 629px;
+        }
+
+        .work-pageu95flores-cart .the-ideation-phase-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 6578px;
+            width: 629px;
+        }
+
+        .work-pageu95flores-cart .user-persona-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 3521px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .frame-57-5v6drZ {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 121px;
+            left: 111px;
+            position: absolute;
+            top: 3254px;
+        }
+
+        .work-pageu95flores-cart .frame-52-ArmxtO {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 16px;
+            position: relative;
+        }
+
+        .work-pageu95flores-cart .vector-6-BYlkJl {
+            background-color: transparent;
+            height: 66px;
+            margin-left: -0.50px;
+            position: relative;
+            width: 1px;
+        }
+
+        .work-pageu95flores-cart .frame-51-BYlkJl {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 301px;
+        }
+
+        .work-pageu95flores-cart .recruited-interview-participants-Co6Odu {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .personal-network-Co6Odu {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .frame-54-ArmxtO {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 16px;
+            position: relative;
+        }
+
+        .work-pageu95flores-cart .vector-7-XfkUwh {
+            background-color: transparent;
+            height: 66px;
+            margin-left: -0.50px;
+            position: relative;
+            width: 1px;
+        }
+
+        .work-pageu95flores-cart .frame-53-XfkUwh {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 224px;
+        }
+
+        .work-pageu95flores-cart .no-of-participants-LjZPcs {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .x9-males-11-females-LjZPcs {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .frame-56-ArmxtO {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 16px;
+            position: relative;
+        }
+
+        .work-pageu95flores-cart .vector-8-WDToQx {
+            background-color: transparent;
+            height: 66px;
+            margin-left: -0.50px;
+            position: relative;
+            width: 1px;
+        }
+
+        .work-pageu95flores-cart .frame-55-WDToQx {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 221px;
+        }
+
+        .work-pageu95flores-cart .participants-age-tk5RXv {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .x25-40-age-group-tk5RXv {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .frame-61-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 58px;
+            left: 543px;
+            position: absolute;
+            top: 3694px;
+            width: 782px;
+        }
+
+        .work-pageu95flores-cart .frame-58-O0kTvn {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+        }
+
+        .work-pageu95flores-cart .bio-X0da1d {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .sarah-is-a-busy-mark-X0da1d {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: left;
+            width: 782px;
+        }
+
+        .work-pageu95flores-cart .frame-59-O0kTvn {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+        }
+
+        .work-pageu95flores-cart .goals-mINrDY {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .sarah-wants-to-custo-mINrDY {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .frame-60-O0kTvn {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+        }
+
+        .work-pageu95flores-cart .frustrations-3YQQOi {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .sarah-has-a-lack-of-3YQQOi {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .group-890-5v6drZ {
+            background-color: transparent;
+            height: 788px;
+            left: 114px;
+            position: absolute;
+            top: 3616px;
+            width: 377px;
+        }
+
+        .work-pageu95flores-cart .clip-path-group-obvY9q {
+            height: 788px;
+            left: 0px;
+            top: 0px;
+            width: 377px;
+        }
+
+        .work-pageu95flores-cart .clip-path-group-4eeUpd {
+            height: 788px;
+            left: 0px;
+            top: 0px;
+            width: 377px;
+        }
+
+        .work-pageu95flores-cart .vector-9-5v6drZ {
+            background-color: transparent;
+            height: 1px;
+            left: 111px;
+            object-fit: cover;
+            position: absolute;
+            top: 3401px;
+            width: 1214px;
+        }
+
+        .work-pageu95flores-cart .frame-62-5v6drZ {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            left: 206px;
+            position: absolute;
+            top: 4276px;
+            width: 194px;
+        }
+
+        .work-pageu95flores-cart .sarah-genai-n9VAEn {
+            align-self: stretch;
+            background-color: transparent;
+            color: #f3f3f3;
+            font-family: var(--font-family-league_spartan);
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .work-pageu95flores-cart .x28-gurgaon-n9VAEn {
+            align-self: stretch;
+            background-color: transparent;
+            color: #f3f3f3;
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 500;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: relative;
+            text-align: center;
+        }
+
+        .work-pageu95flores-cart .it-was-crucial-at-th-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: 36px;
+            position: absolute;
+            text-align: left;
+            top: 4728px;
+            width: 899px;
+        }
+
+        .work-pageu95flores-cart .vector-5v6drZ {
+            background-color: transparent;
+            height: 219px;
+            left: 114px;
+            position: absolute;
+            top: 4862px;
+            width: 391px;
+        }
+
+        .work-pageu95flores-cart .vector-Jwj2mr {
+            background-color: transparent;
+            height: 219px;
+            left: 596px;
+            position: absolute;
+            top: 4832px;
+            width: 391px;
+        }
+
+        .work-pageu95flores-cart .vector-SZDx79 {
+            background-color: transparent;
+            height: 219px;
+            left: 401px;
+            position: absolute;
+            top: 5100px;
+            width: 391px;
+        }
+
+        .work-pageu95flores-cart .vector-0h19Qv {
+            background-color: transparent;
+            height: 219px;
+            left: 894px;
+            position: absolute;
+            top: 5082px;
+            width: 391px;
+        }
+
+        .work-pageu95flores-cart .sarah-needs-a-way-th-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 167px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 4927px;
+            width: 285px;
+        }
+
+        .work-pageu95flores-cart .sarah-knows-her-husb-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 665px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 4897px;
+            width: 253px;
+        }
+
+        .work-pageu95flores-cart .sarah-would-also-lik-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 464px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 5165px;
+            width: 265px;
+        }
+
+        .work-pageu95flores-cart .sarah-sometimes-want-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 927px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 5161px;
+            width: 325px;
+        }
+
+        .work-pageu95flores-cart .frame-63-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 114px;
+            position: absolute;
+            top: 5682px;
+        }
+
+        .work-pageu95flores-cart .vector-JVTFb8 {
+            background-color: transparent;
+            height: 36px;
+            position: relative;
+            width: 19px;
+        }
+
+        .work-pageu95flores-cart .gets-overwhelmed-wit-JVTFb8 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            width: 333px;
+        }
+
+        .work-pageu95flores-cart .frame-66-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 114px;
+            position: absolute;
+            top: 5808px;
+        }
+
+        .work-pageu95flores-cart .vector-xzgCni {
+            background-color: transparent;
+            height: 36px;
+            position: relative;
+            width: 19px;
+        }
+
+        .work-pageu95flores-cart .no-customizations-av-xzgCni {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            width: 333px;
+        }
+
+        .work-pageu95flores-cart .how-can-we-create-a-5v6drZ {
+            background-color: transparent;
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 600;
+            height: auto;
+            left: 178px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 6135px;
+            width: 1085px;
+        }
+
+        .work-pageu95flores-cart .frame-64-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 544px;
+            position: absolute;
+            top: 5682px;
+        }
+
+        .work-pageu95flores-cart .vector-AjJ0Cl {
+            background-color: transparent;
+            height: 36px;
+            position: relative;
+            width: 19px;
+        }
+
+        .work-pageu95flores-cart .too-busy-to-go-to-th-AjJ0Cl {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            width: 306px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-hmw-is-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: left;
+            top: 6690px;
+            width: 1003px;
+        }
+
+        .work-pageu95flores-cart .frame-67-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 544px;
+            position: absolute;
+            top: 5808px;
+        }
+
+        .work-pageu95flores-cart .vector-v2kVgC {
+            background-color: transparent;
+            height: 36px;
+            position: relative;
+            width: 19px;
+        }
+
+        .work-pageu95flores-cart .pre-ordering-fixing-v2kVgC {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            width: 306px;
+        }
+
+        .work-pageu95flores-cart .frame-65-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 947px;
+            position: absolute;
+            top: 5682px;
+        }
+
+        .work-pageu95flores-cart .vector-jyXbfO {
+            background-color: transparent;
+            height: 36px;
+            position: relative;
+            width: 19px;
+        }
+
+        .work-pageu95flores-cart .unsure-of-appearance-jyXbfO {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            width: 306px;
+        }
+
+        .work-pageu95flores-cart .frame-68-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 947px;
+            position: absolute;
+            top: 5808px;
+        }
+
+        .work-pageu95flores-cart .vector-1GE6rE {
+            background-color: transparent;
+            height: 36px;
+            position: relative;
+            width: 19px;
+        }
+
+        .work-pageu95flores-cart .browsing-for-a-perfe-1GE6rE {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            width: 306px;
+        }
+
+        .work-pageu95flores-cart .group-878-5v6drZ {
+            background-color: transparent;
+            height: 62px;
+            left: 158px;
+            position: absolute;
+            top: 6100px;
+            width: 40px;
+        }
+
+        .work-pageu95flores-cart .group-891-5v6drZ {
+            background-color: transparent;
+            height: 58px;
+            left: 964px;
+            position: absolute;
+            top: 6273px;
+            width: 38px;
+        }
+
+        .work-pageu95flores-cart .clip-path-group-5v6drZ {
+            height: 592px;
+            left: 114px;
+            top: 7743px;
+            width: 522px;
+        }
+
+        .work-pageu95flores-cart .rectangle-5v6drZ {
+            background-color: transparent;
+            height: 592px;
+            left: 646px;
+            position: absolute;
+            top: 7743px;
+            width: 682px;
+        }
+
+        .work-pageu95flores-cart .asset-14x-8-1-5v6drZ {
+            background-color: transparent;
+            height: 1808px;
+            left: 114px;
+            object-fit: cover;
+            position: absolute;
+            top: 9132px;
+            width: 1212px;
+        }
+
+        .work-pageu95flores-cart .clip-path-group-Jwj2mr {
+            height: 528px;
+            left: 114px;
+            top: 8350px;
+            width: 1214px;
+        }
+
+        .work-pageu95flores-cart .rectangle-13-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 114px;
+            position: absolute;
+            top: 6871px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-17-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 114px;
+            position: absolute;
+            top: 7269px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-14-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 429px;
+            position: absolute;
+            top: 6871px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-18-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 429px;
+            position: absolute;
+            top: 7269px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-15-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 740px;
+            position: absolute;
+            top: 6871px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-19-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 740px;
+            position: absolute;
+            top: 7269px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-16-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 1055px;
+            position: absolute;
+            top: 6871px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .rectangle-20-5v6drZ {
+            background-color: var(--mirage);
+            height: 338px;
+            left: 1055px;
+            position: absolute;
+            top: 7269px;
+            width: 273px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-simplif-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 145px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 6949px;
+            width: 212px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-create-5v6drZ {
+            left: 145px;
+            width: 212px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-provide-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 456px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 6940px;
+            width: 220px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-leverag-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 456px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 7338px;
+            width: 220px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-ensure-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 767px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 6970px;
+            width: 220px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-offer-a-5v6drZ {
+            left: 767px;
+            top: 7377px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-offer-a-Jwj2mr {
+            left: 1082px;
+            top: 6949px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-create-Jwj2mr {
+            left: 1082px;
+            width: 220px;
+        }
+
+        .work-pageu95flores-cart .ui-branding-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 11279px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .final-screens-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 12831px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .future-scopes-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 15974px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .logo-1-5v6drZ {
+            background-color: transparent;
+            height: 357px;
+            left: 255px;
+            position: absolute;
+            top: 11475px;
+            width: 356px;
+        }
+
+        .work-pageu95flores-cart .logo-without-circle-1-5v6drZ {
+            background-color: transparent;
+            height: 263px;
+            left: 759px;
+            object-fit: cover;
+            position: absolute;
+            top: 11520px;
+            width: 415px;
+        }
+
+        .work-pageu95flores-cart .primary-logo-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 327px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 11904px;
+            width: 212px;
+        }
+
+        .work-pageu95flores-cart .secondary-logo-5v6drZ {
+            background-color: transparent;
+            height: auto;
+            left: 861px;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 11904px;
+            width: 212px;
+        }
+
+        .work-pageu95flores-cart .primary-color-5v6drZ {
+            background-color: transparent;
+            height: 24px;
+            left: 396px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12281px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .secondary-color-5v6drZ {
+            background-color: transparent;
+            height: 24px;
+            left: 682px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12281px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .tertiary-color-5v6drZ {
+            background-color: transparent;
+            height: 24px;
+            left: 995px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12281px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .rectangle-175-5v6drZ {
+            background-color: #bd86d2;
+            border-radius: 20px;
+            height: 184px;
+            left: 368px;
+            position: absolute;
+            top: 12075px;
+            width: 184px;
+        }
+
+        .work-pageu95flores-cart .rectangle-180-5v6drZ {
+            background-color: #52416f;
+            border-radius: 20px;
+            height: 184px;
+            left: 667px;
+            position: absolute;
+            top: 12075px;
+            width: 184px;
+        }
+
+        .work-pageu95flores-cart .rectangle-182-5v6drZ {
+            background-color: #fdf1f6;
+            border-radius: 20px;
+            height: 184px;
+            left: 966px;
+            position: absolute;
+            top: 12075px;
+            width: 184px;
+        }
+
+        .work-pageu95flores-cart .bd86-d2-5v6drZ {
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+            height: 22px;
+            left: 406px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12214px;
+            width: 108px;
+        }
+
+        .work-pageu95flores-cart .x52416-f-5v6drZ {
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+            height: 22px;
+            left: 705px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12214px;
+            width: 108px;
+        }
+
+        .work-pageu95flores-cart .fdf1-f6-5v6drZ {
+            background-color: transparent;
+            color: #4f4f4f;
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+            height: 22px;
+            left: 1004px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12214px;
+            width: 108px;
+        }
+
+        .work-pageu95flores-cart .aa-5v6drZ {
+            background-color: transparent;
+            color: var(--cararra);
+            font-family: var(--font-family-dosis);
+            font-size: 128px;
+            font-style: normal;
+            font-weight: 800;
+            height: 104px;
+            left: 414px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 12445px;
+            white-space: nowrap;
+            width: 162px;
+        }
+
+        .work-pageu95flores-cart .regular-5v6drZ {
+            background-color: transparent;
+            color: var(--quick-silver);
+            font-family: var(--font-family-dosis);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            height: 23px;
+            left: 403px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 12568px;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .medium-5v6drZ {
+            background-color: transparent;
+            color: var(--quick-silver);
+            font-family: var(--font-family-dosis);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            height: 23px;
+            left: 473px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 12568px;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .bold-5v6drZ {
+            background-color: transparent;
+            color: var(--quick-silver);
+            font-family: var(--font-family-dosis);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            height: 23px;
+            left: 548px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 12568px;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .dosis-5v6drZ {
+            background-color: transparent;
+            color: var(--alto-2);
+            font-family: var(--font-family-dosis);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 700;
+            height: 61px;
+            left: 705px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 12429px;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .aa-bb-cc-dd-ee-ff-gg-5v6drZ {
+            background-color: transparent;
+            color: var(--alto-3);
+            font-family: var(--font-family-dosis);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+            height: 90px;
+            left: 705px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 12502px;
+            width: 434px;
+        }
+
+        .work-pageu95flores-cart .rectangle-9-5v6drZ {
+            background-color: var(--mirage);
+            border-radius: 20px;
+            height: 684px;
+            left: 114px;
+            position: absolute;
+            top: 13750px;
+            width: 1212px;
+        }
+
+        .work-pageu95flores-cart .rectangle-183-5v6drZ {
+            background-color: var(--mirage);
+            border-radius: 20px;
+            height: 684px;
+            left: 111px;
+            position: absolute;
+            top: 12960px;
+            width: 588px;
+        }
+
+        .work-pageu95flores-cart .rectangle-184-5v6drZ {
+            background-color: var(--mirage);
+            border-radius: 20px;
+            height: 684px;
+            left: 737px;
+            position: absolute;
+            top: 12960px;
+            width: 588px;
+        }
+
+        .work-pageu95flores-cart .samsung-galaxy-s21-phone-mockup_01-2-5v6drZ {
+            background-color: transparent;
+            height: 617px;
+            left: 197px;
+            position: absolute;
+            top: 13027px;
+            width: 425px;
+        }
+
+        .work-pageu95flores-cart .samsung-galaxy-s21-phone-mockup_03-1-5v6drZ {
+            background-color: transparent;
+            height: 617px;
+            left: 805px;
+            position: absolute;
+            top: 13027px;
+            width: 451px;
+        }
+
+        .work-pageu95flores-cart .frame-69-5v6drZ {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 36px;
+            left: 158px;
+            position: absolute;
+            top: 13806px;
+        }
+
+        .work-pageu95flores-cart .log-in-page_-filled-1-dUPkvb {
+            background-color: transparent;
+            height: 561px;
+            object-fit: cover;
+            position: relative;
+            width: 252px;
+        }
+
+        .work-pageu95flores-cart .landing-page-1-dUPkvb {
+            background-color: transparent;
+            height: 561px;
+            object-fit: cover;
+            position: relative;
+            width: 253px;
+        }
+
+        .work-pageu95flores-cart .home-page-with-hamburger-menu-1-dUPkvb {
+            background-color: transparent;
+            height: 561px;
+            object-fit: cover;
+            position: relative;
+            width: 256px;
+        }
+
+        .work-pageu95flores-cart .product-page-1-dUPkvb {
+            background-color: transparent;
+            height: 561px;
+            object-fit: cover;
+            position: relative;
+            width: 255px;
+        }
+
+        .work-pageu95flores-cart .florabot-is-an-intel-5v6drZ {
+            background-color: transparent;
+            height: 184px;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: 46px;
+            position: absolute;
+            text-align: left;
+            top: 14626px;
+            width: 1189px;
+        }
+
+        .work-pageu95flores-cart .span1-ppn60G {
+            color: var(--alto-3);
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+        }
+
+        .work-pageu95flores-cart .pre-ordering-service-5v6drZ {
+            background-color: transparent;
+            color: var(--alto-3);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 400;
+            height: 377px;
+            left: 114px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: left;
+            top: 16095px;
+            width: 1043px;
+        }
+
+        .work-pageu95flores-cart .frame-70-5v6drZ {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 16px;
+            left: 129px;
+            position: absolute;
+            top: 14900px;
+        }
+
+        .work-pageu95flores-cart .samsung-galaxy-s21-phone-mockup_02-2ljCFO {
+            background-color: transparent;
+            height: 788px;
+            position: relative;
+            width: 394px;
+        }
+
+        .work-pageu95flores-cart .samsung-galaxy-s21-phone-mockup_06-2ljCFO {
+            background-color: transparent;
+            height: 784px;
+            position: relative;
+            width: 376px;
+        }
+
+        .work-pageu95flores-cart .samsung-galaxy-s21-phone-mockup_05-2ljCFO {
+            background-color: transparent;
+            height: 786px;
+            position: relative;
+            width: 381px;
+        }
+
+        .work-pageu95flores-cart .group-1447-5v6drZ {
+            background-color: transparent;
+            height: 454px;
+            left: 114px;
+            position: absolute;
+            top: 17686px;
+            width: 1212px;
+        }
+
+        .work-pageu95flores-cart .rectangle-6-rBC0J3 {
+            background-color: var(--mirage);
+            border-radius: 32px;
+            height: 454px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1212px;
+        }
+
+        .work-pageu95flores-cart .frame-38-rBC0J3 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            left: 48px;
+            position: absolute;
+            top: 96px;
+            width: 572px;
+        }
+
+        .work-pageu95flores-cart .eyes-on-ustime-to-lock-them-in-cknohr {
+            -webkit-text-stroke: 1.5px var(--white);
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-left: -1.50px;
+            margin-right: -205.50px;
+            margin-top: -2.50px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95flores-cart .lets-stay-connected-cknohr {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-left: -1.50px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .frame-41-rBC0J3 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 754px;
+            position: absolute;
+            top: 276px;
+            width: 410px;
+        }
+
+        .work-pageu95flores-cart .shubhisharma0708gmailcom-ddoals {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .work-pageu95flores-cart .frame-40-ddoals {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .work-pageu95flores-cart .vector-5-ntkjik {
+            background-color: transparent;
+            height: 1px;
+            margin-top: -0.50px;
+            object-fit: cover;
+            position: relative;
+            width: 410px;
+        }
+
+        .work-pageu95flores-cart .frame-39-ntkjik {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 24px;
+            position: relative;
+        }
+
+        .work-pageu95flores-cart .fi_3992590-gWs9FW {
+            background-color: transparent;
+            height: 32px;
+            position: relative;
+            width: 32px;
+        }
+
+        .work-pageu95flores-cart .behance-gWs9FW {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95flores-cart .fi_1051333-ZHNWXJ {
+            background-color: transparent;
+            height: 32px;
+            position: relative;
+            width: 32px;
+        }
+
+        .work-pageu95flores-cart .linkedin-ZHNWXJ {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .work-pageu95flores-cart .vector-rBC0J3 {
+            background-color: transparent;
+            height: 83px;
+            left: 630px;
+            position: absolute;
+            top: 165px;
+            width: 112px;
+        }
+
+        .work-pageu95flores-cart .scan-the-qr-code-to-view-the-prototype-5v6drZ {
+            background-color: transparent;
+            color: var(--illustration-purple);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 500;
+            height: auto;
+            left: 217px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: center;
+            top: 16911px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .work-pageu95flores-cart .frame-1-5v6drZ {
+            background-color: transparent;
+            height: 156px;
+            left: 365px;
+            position: absolute;
+            top: 16999px;
+            width: 155px;
+        }
+
+        .work-pageu95flores-cart .mockup_11-1-5v6drZ {
+            background-color: transparent;
+            height: 752px;
+            left: 774px;
+            position: absolute;
+            top: 16707px;
+            width: 520px;
+        }
+
+        .work-pageu95flores-cart .clip-path-group {
+            background-color: transparent;
+            position: absolute;
+        }
+
+        .work-pageu95flores-cart .how-might-we-create {
+            background-color: transparent;
+            height: auto;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            top: 7347px;
+        }
+
+        .work-pageu95flores-cart .how-might-we-offer-a {
+            background-color: transparent;
+            height: auto;
+            letter-spacing: 0.00px;
+            line-height: 30px;
+            position: absolute;
+            text-align: center;
+            width: 220px;
+        }
+
+        .work-pageu95flores-cart .span1 {
+            font-family: var(--font-family-league_spartan);
+            font-style: normal;
+        }
+    </style>    
+</head>
+
+<body style="margin: 0px; background: rgb(6, 11, 24); overflow-x: hidden;" dark-scroll=""><input type="hidden"
+        id="anPageName" name="page" value="work-pageu95flores-cart">
+    <div class="container-center-horizontal">
+        <div class="work-pageu95flores-cart screen " data-id="232:671">
+            <div class="frame-3-5v6drZ frame-3" data-id="232:672"><img class="vector-sGp1xx" data-id="232:673"
+                    src="img/vector-1.svg"
+                    anima-src="img/vector-1.svg"
+                    alt="Vector">
+                <div class="frame-2-sGp1xx frame-2" data-id="332:77">
+                    <div class="frame-2-PBDFc8 frame-2" data-id="332:78"><a href="index.html">
+                            <div class="home-n8C2Pk publicsans-semi-bold-dove-gray-20px" data-id="332:79"
+                                data-hotspot-id="hp-0">Home</div>
+                        </a></div>
+                    <div class="frame-3-PBDFc8 frame-3" data-id="332:80"><a href="visual-work.html">
+                        <div class="work-FZUxNb publicsans-semi-bold-white-20px" data-id="332:81">Work</div>
+                        <div class="ellipse-1-FZUxNb" data-id="332:82"></div></a>
+                    </div>
+                    <div class="contact-PBDFc8 publicsans-medium-dove-gray-20px" data-id="332:83">Contact</div>
+                </div>
+            </div>
+            <h1 class="title-5v6drZ" data-id="232:703">The Flores Cart</h1><img class="mockup-1-5v6drZ"
+                data-id="232:750"
+                src="img/mockup-1-1.png"
+                anima-src="img/mockup-1-1.png"
+                alt="Mockup 1">
+            <p class="the-covid-19-pandemi-5v6drZ leaguespartan-light-alto-24px" data-id="246:144"><span
+                    class="span0-xmNlJ1 leaguespartan-light-alto-24px">The COVID-19 pandemic forced people all over the
+                    world to adjust their lifestyles, including the way they shop. So, the brand decided to launch their
+                    M</span><span class="span1-xmNlJ1 span1">obile App</span><span
+                    class="span2-xmNlJ1 leaguespartan-light-alto-24px"> through which people can shop with the same
+                    shopping experience as they have with Physical Flores Cart .</span></p>
+            <div class="published-may-8th-2023-5v6drZ" data-id="250:225">Published: May 8th, 2023</div>
+            <p class="flores-carts-usp-is-5v6drZ" data-id="246:170">Flores Cart's USP is customized flower arrangements
+                tailored to customers' preferences. The app aims to streamline buying while keeping it hassle-free. The
+                challenge lies in balancing ample choices with simplicity to avoid overwhelming users.</p>
+            <p class="the-flores-cart-app-5v6drZ leaguespartan-light-alto-28px" data-id="246:173">The Flores Cart app is
+                designed to provide a simple, user-friendly platform for customers to easily customize their flower
+                arrangements. The goal is to offer a smooth experience, allowing users to create personalized bouquets
+                tailored to their preferences without feeling overwhelmed by too many options. Ultimately, the app aims
+                to make the process of customizing and ordering high-quality, unique flower arrangements both easy and
+                enjoyable.</p>
+            <p class="to-better-understand-5v6drZ leaguespartan-light-alto-28px" data-id="246:176">To better understand
+                and empathise with users, I conducted personal Interviews. I wanted to learn from the target audience
+                what services they use to order, what they like or dislike about the process, were they able to make
+                buying decision quickly, about their ease of use, pain points and what features they think are necessary
+                to order flowers online.</p><img class="layer_1-5v6drZ" data-id="246:145"
+                src="img/layer-1-1.svg"
+                anima-src="img/layer-1-1.svg"
+                alt="Layer_1"><img class="samsung-galaxy-s21-phone-mockup-2-5v6drZ" data-id="246:174"
+                src="img/samsung-galaxy-s21-phone-mockup-2.png"
+                anima-src="img/samsung-galaxy-s21-phone-mockup-2.png"
+                alt="Samsung galaxy s21 phone mockup 2">
+            <div class="the-empathize-phase-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="246:175">The Empathize
+                Phase</div>
+            <div class="the-define-phase-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="250:227">The Define Phase
+            </div>
+            <div class="the-pain-points-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="250:238">The Pain Points
+            </div>
+            <div class="the-ideation-phase-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="250:290">The Ideation
+                Phase</div>
+            <div class="user-persona-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="246:196">User Persona</div>
+            <div class="frame-57-5v6drZ" data-id="246:195">
+                <div class="frame-52-ArmxtO" data-id="246:190"><img class="vector-6-BYlkJl" data-id="246:180"
+                        src="img/vector-6-2.svg"
+                        anima-src="img/vector-6-2.svg"
+                        alt="Vector 6">
+                    <div class="frame-51-BYlkJl" data-id="246:189">
+                        <div class="recruited-interview-participants-Co6Odu leaguespartan-light-alto-24px"
+                            data-id="246:181">Recruited Interview Participants</div>
+                        <div class="personal-network-Co6Odu leaguespartan-medium-alto-28px" data-id="246:182">Personal
+                            Network</div>
+                    </div>
+                </div>
+                <div class="frame-54-ArmxtO" data-id="246:192"><img class="vector-7-XfkUwh" data-id="246:185"
+                        src="img/vector-6-2.svg"
+                        anima-src="img/vector-6-2.svg"
+                        alt="Vector 7">
+                    <div class="frame-53-XfkUwh" data-id="246:191">
+                        <div class="no-of-participants-LjZPcs leaguespartan-light-alto-24px" data-id="246:183">No. Of
+                            Participants</div>
+                        <div class="x9-males-11-females-LjZPcs leaguespartan-medium-alto-28px" data-id="246:184">9
+                            Males, 11 Females</div>
+                    </div>
+                </div>
+                <div class="frame-56-ArmxtO" data-id="246:194"><img class="vector-8-WDToQx" data-id="246:188"
+                        src="img/vector-6-2.svg"
+                        anima-src="img/vector-6-2.svg"
+                        alt="Vector 8">
+                    <div class="frame-55-WDToQx" data-id="246:193">
+                        <div class="participants-age-tk5RXv leaguespartan-light-alto-24px" data-id="246:186">
+                            Participants Age</div>
+                        <p class="x25-40-age-group-tk5RXv leaguespartan-medium-alto-28px" data-id="246:187">25 - 40 Age
+                            Group</p>
+                    </div>
+                </div>
+            </div>
+            <div class="frame-61-5v6drZ" data-id="250:222">
+                <div class="frame-58-O0kTvn" data-id="246:207">
+                    <div class="bio-X0da1d leaguespartan-medium-alto-32px" data-id="246:205">Bio</div>
+                    <p class="sarah-is-a-busy-mark-X0da1d leaguespartan-light-alto-24px" data-id="246:204">Sarah is a
+                        busy marketing executive who recently moved to a new city for her job. She enjoys sending
+                        flowers to her friends and family on special occasions, but she often struggles to find the time
+                        to visit a florist in person.</p>
+                </div>
+                <div class="frame-59-O0kTvn" data-id="246:208">
+                    <div class="goals-mINrDY leaguespartan-medium-alto-32px" data-id="246:209">Goals</div>
+                    <p class="sarah-wants-to-custo-mINrDY leaguespartan-light-alto-24px" data-id="246:210">Sarah wants
+                        to customize flower arrangements acc. to her preferences and schedule deliveries to her friends
+                        and family, regardless of their location. She wants to save time and effort by using an online
+                        flower-selling app and values quality, affordability, and convenience.</p>
+                </div>
+                <div class="frame-60-O0kTvn" data-id="246:211">
+                    <div class="frustrations-3YQQOi leaguespartan-medium-alto-32px" data-id="246:212">Frustrations</div>
+                    <p class="sarah-has-a-lack-of-3YQQOi leaguespartan-light-alto-24px" data-id="246:213">Sarah has a
+                        lack of time to go to the local stores to buy presents for her family and friends during the
+                        week. The authentic florist stores have no option to deliver presents in a specified time frame
+                        on the same day.</p>
+                </div>
+            </div>
+            <div class="group-890-5v6drZ" data-id="250:224"><img class="clip-path-group-obvY9q clip-path-group"
+                    data-id="246:198"
+                    src="img/clip-path-group-3.png"
+                    anima-src="img/clip-path-group-3.png"
+                    alt="Clip path group"><img class="clip-path-group-4eeUpd clip-path-group" data-id="250:214"
+                    src="img/clip-path-group.png"
+                    anima-src="img/clip-path-group.png"
+                    alt="Clip path group"></div><img class="vector-9-5v6drZ" data-id="246:206"
+                src="img/vector-9-1.svg"
+                anima-src="img/vector-9-1.svg"
+                alt="Vector 9">
+            <div class="frame-62-5v6drZ" data-id="250:226">
+                <div class="sarah-genai-n9VAEn" data-id="250:220">Sarah Genai</div>
+                <div class="x28-gurgaon-n9VAEn" data-id="250:221">28, Gurgaon</div>
+            </div>
+            <p class="it-was-crucial-at-th-5v6drZ leaguespartan-light-alto-28px" data-id="250:228">It was crucial at
+                this stage to define the project scope and problem statement as well as constraints and deliverables.
+            </p><img class="vector-5v6drZ" data-id="250:230"
+                src="img/vector-31.svg"
+                anima-src="img/vector-31.svg"
+                alt="Vector"><img class="vector-Jwj2mr" data-id="250:232"
+                src="img/vector-31.svg"
+                anima-src="img/vector-31.svg"
+                alt="Vector"><img class="vector-SZDx79" data-id="250:234"
+                src="img/vector-31.svg"
+                anima-src="img/vector-31.svg"
+                alt="Vector"><img class="vector-0h19Qv" data-id="250:236"
+                src="img/vector-31.svg"
+                anima-src="img/vector-31.svg"
+                alt="Vector">
+            <p class="sarah-needs-a-way-th-5v6drZ leaguespartan-normal-alto-20px" data-id="250:229">Sarah needs a way
+                that can help her quickly choose a floral arrangement at her price point because she wants to bring home
+                a gift for her husband while staying within her budget...</p>
+            <p class="sarah-knows-her-husb-5v6drZ leaguespartan-normal-alto-20px" data-id="250:233">Sarah knows her
+                husband’s preferences for flowers and can articulate them, but would like to add her own personalization
+                to make it more special and unique...</p>
+            <p class="sarah-would-also-lik-5v6drZ leaguespartan-normal-alto-20px" data-id="250:235">Sarah would also
+                like to know visually what she’s getting because she wants to ensure the aesthetic appearance and
+                quality of gift</p>
+            <p class="sarah-sometimes-want-5v6drZ leaguespartan-normal-alto-20px" data-id="250:237">Sarah sometimes
+                wants to pre-order the flower arrangements by fixing a delivery date and time because she don’t want to
+                miss out on important dates of his life</p>
+            <div class="frame-63-5v6drZ" data-id="250:251"><img class="vector-JVTFb8" data-id="250:244"
+                    src="img/vector-36.svg"
+                    anima-src="img/vector-36.svg"
+                    alt="Vector">
+                <p class="gets-overwhelmed-wit-JVTFb8 leaguespartan-normal-alto-24px" data-id="250:246">Gets overwhelmed
+                    with variety of flower options</p>
+            </div>
+            <div class="frame-66-5v6drZ" data-id="250:254"><img class="vector-xzgCni" data-id="250:255"
+                    src="img/vector-36.svg"
+                    anima-src="img/vector-36.svg"
+                    alt="Vector">
+                <p class="no-customizations-av-xzgCni leaguespartan-normal-alto-24px" data-id="250:256">No
+                    Customizations available in online platforms</p>
+            </div>
+            <p class="how-can-we-create-a-5v6drZ" data-id="250:271">How can we create a convenient, intuitive flower app
+                for busy users, offering easy customization, quality bouquets, and reliable delivery without
+                overwhelming options?</p>
+            <div class="frame-64-5v6drZ" data-id="250:252"><img class="vector-AjJ0Cl" data-id="250:248"
+                    src="img/vector-36.svg"
+                    anima-src="img/vector-36.svg"
+                    alt="Vector">
+                <p class="too-busy-to-go-to-th-AjJ0Cl leaguespartan-normal-alto-24px" data-id="250:247">Too busy to go
+                    to the store for buying flowers</p>
+            </div>
+            <p class="how-might-we-hmw-is-5v6drZ leaguespartan-normal-alto-24px" data-id="259:65">“How might we” (HMW)
+                is a design thinking activity used to translate problems into opportunities for design. HMW gets your
+                creativity flowing and encourages you to think about the problem from different perspectives.</p>
+            <div class="frame-67-5v6drZ" data-id="250:257"><img class="vector-v2kVgC" data-id="250:258"
+                    src="img/vector-36.svg"
+                    anima-src="img/vector-36.svg"
+                    alt="Vector">
+                <p class="pre-ordering-fixing-v2kVgC leaguespartan-normal-alto-24px" data-id="250:259">Pre-ordering/
+                    fixing date of delivery not available</p>
+            </div>
+            <div class="frame-65-5v6drZ" data-id="250:253"><img class="vector-jyXbfO" data-id="250:250"
+                    src="img/vector-36.svg"
+                    anima-src="img/vector-36.svg"
+                    alt="Vector">
+                <p class="unsure-of-appearance-jyXbfO leaguespartan-normal-alto-24px" data-id="250:249">Unsure of
+                    appearance, freshness and customer service</p>
+            </div>
+            <div class="frame-68-5v6drZ" data-id="250:260"><img class="vector-1GE6rE" data-id="250:261"
+                    src="img/vector-36.svg"
+                    anima-src="img/vector-36.svg"
+                    alt="Vector">
+                <p class="browsing-for-a-perfe-1GE6rE leaguespartan-normal-alto-24px" data-id="250:262">Browsing for a
+                    perfect flower choice is time-consuming</p>
+            </div><img class="group-878-5v6drZ" data-id="250:266"
+                src="img/group-878@2x.png"
+                anima-src="img/group-878@2x.png"
+                alt="Group 878"><img class="group-891-5v6drZ" data-id="250:272"
+                src="img/group-891@2x.png"
+                anima-src="img/group-891@2x.png"
+                alt="Group 891"><img class="clip-path-group-5v6drZ clip-path-group" data-id="250:277"
+                src="img/clip-path-group-1.png"
+                anima-src="img/clip-path-group-1.png"
+                alt="Clip path group"><img class="rectangle-5v6drZ" data-id="250:288"
+                src="img/rectangle.png"
+                anima-src="img/rectangle.png"
+                alt="Rectangle"><img class="asset-14x-8-1-5v6drZ" data-id="250:304"
+                src="img/asset-1-4x-8-1.png"
+                anima-src="img/asset-1-4x-8-1.png"
+                alt="Asset 1@4x-8 1"><img class="clip-path-group-Jwj2mr clip-path-group" data-id="250:306"
+                src="img/clip-path-group-2.png"
+                anima-src="img/clip-path-group-2.png"
+                alt="Clip path group">
+            <div class="rectangle-13-5v6drZ" data-id="259:66"></div>
+            <div class="rectangle-17-5v6drZ" data-id="259:78"></div>
+            <div class="rectangle-14-5v6drZ" data-id="259:69"></div>
+            <div class="rectangle-18-5v6drZ" data-id="259:79"></div>
+            <div class="rectangle-15-5v6drZ" data-id="259:72"></div>
+            <div class="rectangle-19-5v6drZ" data-id="259:80"></div>
+            <div class="rectangle-16-5v6drZ" data-id="259:75"></div>
+            <div class="rectangle-20-5v6drZ" data-id="259:81"></div>
+            <p class="how-might-we-simplif-5v6drZ leaguespartan-normal-alto-24px" data-id="259:67">How might we simplify
+                the user interface to help users quickly customize the perfect flower bouquet?</p>
+            <p class="how-might-we-create-5v6drZ how-might-we-create leaguespartan-normal-alto-24px" data-id="259:82">
+                How might we create a seamless delivery process that ensures timely and reliable delivery of the flower
+                bouquet?</p>
+            <p class="how-might-we-provide-5v6drZ leaguespartan-normal-alto-24px" data-id="259:70">How might we provide
+                helpful guidance and recommendations to users to help them select the best bouquet for their needs?</p>
+            <p class="how-might-we-leverag-5v6drZ leaguespartan-normal-alto-24px" data-id="259:83">How might we leverage
+                technology such as augmented reality to allow users to visualize the bouquet before making a purchase?
+            </p>
+            <p class="how-might-we-ensure-5v6drZ leaguespartan-normal-alto-24px" data-id="259:73">How might we ensure
+                the quality and freshness of the flowers during the delivery process?</p>
+            <p class="how-might-we-offer-a-5v6drZ how-might-we-offer-a leaguespartan-normal-alto-24px" data-id="259:84">
+                How might we offer a pre-order service to allow users to fix date and time of delivery?</p>
+            <p class="how-might-we-offer-a-Jwj2mr how-might-we-offer-a leaguespartan-normal-alto-24px" data-id="259:76">
+                How might we offer a wide variety of flower and arrangement options without overwhelming the user?</p>
+            <p class="how-might-we-create-Jwj2mr how-might-we-create leaguespartan-normal-alto-24px" data-id="259:85">
+                How might we create an intuitive and user-friendly mobile app that allows users to purchase flowers on
+                the go?</p>
+            <div class="ui-branding-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="259:87">UI Branding</div>
+            <div class="final-screens-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="259:612">Final Screens</div>
+            <div class="future-scopes-5v6drZ leaguespartan-extra-bold-studio-56px" data-id="269:88">Future Scopes</div>
+            <img class="logo-1-5v6drZ" data-id="259:86"
+                src="img/logo-1@2x.png"
+                anima-src="img/logo-1@2x.png"
+                alt="LOGO 1"><img class="logo-without-circle-1-5v6drZ" data-id="259:88"
+                src="img/logo-without-circle-1.png"
+                anima-src="img/logo-without-circle-1.png"
+                alt="LOGO WITHOUT CIRCLE 1">
+            <div class="primary-logo-5v6drZ leaguespartan-normal-alto-24px" data-id="259:89">Primary Logo</div>
+            <div class="secondary-logo-5v6drZ leaguespartan-normal-alto-24px" data-id="259:90">Secondary Logo</div>
+            <div class="primary-color-5v6drZ valign-text-middle publicsans-normal-star-dust-20px" data-id="259:112">
+                Primary Color</div>
+            <div class="secondary-color-5v6drZ valign-text-middle publicsans-normal-star-dust-20px" data-id="259:113">
+                Secondary Color</div>
+            <div class="tertiary-color-5v6drZ valign-text-middle publicsans-normal-star-dust-20px" data-id="259:114">
+                Tertiary Color</div>
+            <div class="rectangle-175-5v6drZ" data-id="259:115"></div>
+            <div class="rectangle-180-5v6drZ" data-id="259:116"></div>
+            <div class="rectangle-182-5v6drZ" data-id="259:117"></div>
+            <div class="bd86-d2-5v6drZ valign-text-middle" data-id="259:118">#BD86D2</div>
+            <div class="x52416-f-5v6drZ valign-text-middle" data-id="259:119">#52416F</div>
+            <div class="fdf1-f6-5v6drZ valign-text-middle" data-id="259:120">#FDF1F6</div>
+            <div class="aa-5v6drZ valign-text-middle" data-id="259:123">Aa</div>
+            <div class="regular-5v6drZ valign-text-middle" data-id="259:125">Regular</div>
+            <div class="medium-5v6drZ valign-text-middle" data-id="259:126">Medium</div>
+            <div class="bold-5v6drZ valign-text-middle" data-id="259:127">Bold</div>
+            <div class="dosis-5v6drZ valign-text-middle" data-id="259:129">Dosis</div>
+            <div class="aa-bb-cc-dd-ee-ff-gg-5v6drZ valign-text-middle" data-id="259:130">
+                AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz<br>1234567890</div>
+            <div class="rectangle-9-5v6drZ" data-id="264:65"></div>
+            <div class="rectangle-183-5v6drZ" data-id="264:67"></div>
+            <div class="rectangle-184-5v6drZ" data-id="264:68"></div><img
+                class="samsung-galaxy-s21-phone-mockup_01-2-5v6drZ" data-id="264:70"
+                src="img/samsung-galaxy-s21-phone-mockup-01-2.png"
+                anima-src="img/samsung-galaxy-s21-phone-mockup-01-2.png"
+                alt="Samsung galaxy s21 phone mockup_01 2"><img class="samsung-galaxy-s21-phone-mockup_03-1-5v6drZ"
+                data-id="264:71"
+                src="img/samsung-galaxy-s21-phone-mockup-03-1.png"
+                anima-src="img/samsung-galaxy-s21-phone-mockup-03-1.png"
+                alt="Samsung galaxy s21 phone mockup_03 1">
+            <div class="frame-69-5v6drZ" data-id="269:74"><img class="log-in-page_-filled-1-dUPkvb" data-id="259:613"
+                    src="img/log-in-page-filled-1.png"
+                    anima-src="img/log-in-page-filled-1.png"
+                    alt="Log In Page_Filled 1"><img class="landing-page-1-dUPkvb" data-id="269:73"
+                    src="img/landing-page-1.png"
+                    anima-src="img/landing-page-1.png"
+                    alt="Landing Page 1"><img class="home-page-with-hamburger-menu-1-dUPkvb" data-id="259:615"
+                    src="img/home-page-with-hamburger-menu-1.png"
+                    anima-src="img/home-page-with-hamburger-menu-1.png"
+                    alt="Home Page with hamburger menu 1"><img class="product-page-1-dUPkvb" data-id="269:72"
+                    src="img/product-page-1.png"
+                    anima-src="img/product-page-1.png"
+                    alt="PRODUCT PAGE 1"></div>
+            <p class="florabot-is-an-intel-5v6drZ valign-text-middle leaguespartan-normal-alto-40px" data-id="269:86">
+                <span><span class="span0-ppn60G leaguespartan-normal-alto-40px">Florabot is an </span><span
+                        class="span1-ppn60G span1">Intelligent Chatbot</span><span
+                        class="span2-ppn60G leaguespartan-normal-alto-40px"> that helps you find the perfect bouquet or
+                        arrangement for any occasion. With its advanced algorithms and expert knowledge of flowers,
+                        Florabot can create personalized recommendations based on your preferences and
+                        budget.&nbsp;&nbsp;</span></span></p>
+            <p class="pre-ordering-service-5v6drZ valign-text-middle" data-id="269:80">Pre- ordering services: The app
+                could offer pre-date orders where users can fix a particular date and time for giving/ receiving flowers
+                <br><br>Sustainability and Eco-Friendly Practices: The app could focus on sustainability and
+                eco-friendly practices, offering users environmentally friendly options and supporting sustainable
+                flower farming and distribution practices. <br><br>Event Planning Services: The app could expand into
+                event planning services, offering floral arrangements and other services for weddings, parties, and
+                other special events. <br><br>Subscription Services: The app could offer subscription services where
+                users can receive regular deliveries of flowers, plants, or other products.</p>
+            <div class="frame-70-5v6drZ" data-id="269:84"><img class="samsung-galaxy-s21-phone-mockup_02-2ljCFO"
+                    data-id="269:81"
+                    src="img/samsung-galaxy-s21-phone-mockup-02.png"
+                    anima-src="img/samsung-galaxy-s21-phone-mockup-02.png"
+                    alt="Samsung galaxy s21 phone mockup_02"><img class="samsung-galaxy-s21-phone-mockup_06-2ljCFO"
+                    data-id="269:83"
+                    src="img/samsung-galaxy-s21-phone-mockup-06.png"
+                    anima-src="img/samsung-galaxy-s21-phone-mockup-06.png"
+                    alt="Samsung galaxy s21 phone mockup_06"><img class="samsung-galaxy-s21-phone-mockup_05-2ljCFO"
+                    data-id="269:82"
+                    src="img/samsung-galaxy-s21-phone-mockup-05.png"
+                    anima-src="img/samsung-galaxy-s21-phone-mockup-05.png"
+                    alt="Samsung galaxy s21 phone mockup_05"></div>
+            <div class="group-1447-5v6drZ" data-id="352:138">
+                <div class="rectangle-6-rBC0J3" data-id="352:139"></div>
+                <div class="frame-38-rBC0J3" data-id="352:140">
+                    <p class="eyes-on-ustime-to-lock-them-in-cknohr publicsans-black-white-48px" data-id="352:141">Eyes
+                        on us—time to lock them in!</p>
+                    <div class="lets-stay-connected-cknohr publicsans-semi-bold-studio-32px" data-id="352:142">Let’s
+                        stay connected!</div>
+                </div>
+                <div class="frame-41-rBC0J3" data-id="352:143">
+                    <div class="shubhisharma0708gmailcom-ddoals leaguespartan-medium-alto-28px" data-id="352:144">
+                        Shubhisharma0708@gmail.com</div>
+                    <div class="frame-40-ddoals" data-id="352:145"><img class="vector-5-ntkjik" data-id="352:146"
+                            src="img/vector-5.svg"
+                            anima-src="img/vector-5.svg"
+                            alt="Vector 5">
+                        <div class="frame-39-ntkjik" data-id="352:147">
+                            <div class="frame-37" data-id="352:148"><img class="fi_3992590-gWs9FW" data-id="352:149"
+                                    src="img/fi-3992590-4.svg"
+                                    anima-src="img/fi-3992590-4.svg"
+                                    alt="fi_3992590">
+                                <div class="behance-gWs9FW leaguespartan-normal-alto-20px" data-id="352:155">Behance
+                                </div>
+                            </div>
+                            <div class="frame-37" data-id="352:156"><img class="fi_1051333-ZHNWXJ" data-id="352:157"
+                                    src="img/fi-1051333-4.svg"
+                                    anima-src="img/fi-1051333-4.svg"
+                                    alt="fi_1051333">
+                                <div class="linkedin-ZHNWXJ leaguespartan-normal-alto-20px" data-id="352:159">Linkedin
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><img class="vector-rBC0J3" data-id="352:160"
+                    src="img/vector-2.svg"
+                    anima-src="img/vector-2.svg"
+                    alt="Vector">
+            </div>
+            <p class="scan-the-qr-code-to-view-the-prototype-5v6drZ" data-id="272:127">Scan the QR code to view the
+                prototype.</p><img class="frame-1-5v6drZ" data-id="272:128"
+                src="img/frame-1@2x.png"
+                anima-src="img/frame-1@2x.png"
+                alt="frame 1"><img class="mockup_11-1-5v6drZ" data-id="272:126"
+                src="img/mockup-11-1.png"
+                anima-src="img/mockup-11-1.png"
+                alt="Mockup_11 1">
+        </div>
+    </div>
