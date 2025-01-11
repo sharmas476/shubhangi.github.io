@@ -1,0 +1,1719 @@
+<html>
+
+<head>
+    <style id="st_globalStyles">
+        /* SCROLLBAR */
+
+        [dark-scroll]::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-track-piece {
+            background-color: #2b2b2b;
+            border: 1px solid #1d1d1d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb {
+            height: 10px;
+            background-color: #4d4d4d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb:hover {
+            background-color: #5a5a5a;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1440, maximum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+    <link rel="stylesheet" href="tooltip.css" />
+    <style id="hotspots-styles">
+        @import url("https://fonts.googleapis.com/css?family=Public+Sans:900,400,600,500,700|League+Spartan:900,400,600,300,800,500,700|Caveat:700|Dosis:500,400,700,800|Inter:500,700,600,400|Lato:400,700,800,600|Jomhuria:400");
+
+
+        @font-face {
+            font-family: "Avenir LT Pro-95Black";
+            font-style: normal;
+            font-weight: 900;
+            src: url('fonts/avenirltproblack.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: "Avenir LT Pro-45Book";
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/avenirltprolight.otf') format("opentype");
+        }
+
+
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --alto: #dcdcdc;
+            --alto-2: #d9d9d9;
+            --alto-3: #dedcdc;
+            --base-colour: #060b18;
+            --black: #000000;
+            --black-haze: #f6f6f6;
+            --blue-charcoal: #060c18;
+            --blue-chill: #129490;
+            --blue-dianne: #1a434e;
+            --cararra: #ebebeb;
+            --charlotte: #baf3f1;
+            --dove-gray: #707070;
+            --fiord: #424e67;
+            --grey---text: #585858;
+            --illustration-purple: #7649b7;
+            --illustrationnew: #dbffc4;
+            --main---lavender: #bb86fc;
+            --mirage: #171d29;
+            --mountain-mist: #939393;
+            --paradiso: #2d7c7a;
+            --pink-swan: #b9b9b9;
+            --quick-silver: #a4a4a4;
+            --rock-blue: #94bcc7;
+            --shark: #26282f;
+            --silver: #c1c1c1;
+            --star-dust: #9c9c9c;
+            --steel-gray: #202632;
+            --thunder: #2d2d2d;
+            --white: #ffffff;
+            --yellow-sunshine: #fff100b2;
+
+            --font-size-l: 28px;
+            --font-size-m: 24px;
+            --font-size-s: 20px;
+            --font-size-xl: 40px;
+            --font-size-xxl: 48px;
+            --font-size-xxxl: 50px;
+            --font-size-xxxxl: 56px;
+
+            --font-family-avenir_lt_pro-45book: "Avenir LT Pro-45Book", Helvetica;
+            --font-family-avenir_lt_pro-95black: "Avenir LT Pro-95Black", Helvetica;
+            --font-family-caveat: "Caveat", Helvetica;
+            --font-family-dosis: "Dosis", Helvetica;
+            --font-family-inter: "Inter", Helvetica;
+            --font-family-jomhuria: "Jomhuria", Helvetica;
+            --font-family-lato: "Lato", Helvetica;
+            --font-family-league_spartan: "League Spartan", Helvetica;
+            --font-family-public_sans: "Public Sans", Helvetica;
+        }
+
+        .leaguespartan-normal-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-light-alto-24px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-normal-alto-24px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-mountain-mist-16px {
+            color: var(--mountain-mist);
+            font-family: var(--font-family-league_spartan);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-medium-alto-28px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .leaguespartan-normal-white-14px {
+            font-family: var(--font-family-league_spartan);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-normal-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .publicsans-medium-dove-gray-20px {
+            color: var(--dove-gray);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .leaguespartan-semi-bold-white-40px {
+            color: var(--white);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-light-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-extra-bold-studio-56px {
+            color: var(--illustration-purple);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .publicsans-semi-bold-white-20px {
+            color: var(--white);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .publicsans-black-white-48px {
+            color: var(--white);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .publicsans-semi-bold-studio-32px {
+            color: var(--illustration-purple);
+            font-family: var(--font-family-public_sans);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .inter-bold-blue-chill-34px {
+            color: var(--blue-chill);
+            font-family: var(--font-family-inter);
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .publicsans-semi-bold-dove-gray-20px {
+            color: var(--dove-gray);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-bold-shark-26px {
+            color: var(--shark);
+            font-family: var(--font-family-league_spartan);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .leaguespartan-medium-shark-20px {
+            color: var(--shark);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .publicsans-semi-bold-blue-charcoal-16px {
+            color: var(--base-colour);
+            font-family: var(--font-family-public_sans);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-normal-alto-50px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .publicsans-semi-bold-snow-flurry-20px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .leaguespartan-normal-alto-56px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xxxxl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-snow-flurry-14px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-league_spartan);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-normal-silver-24px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-semi-bold-black-haze-24px {
+            color: var(--black-haze);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .lato-normal-thunder-16px {
+            color: var(--thunder);
+            font-family: var(--font-family-lato);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .publicsans-bold-alto-82px {
+            color: var(--alto);
+            font-family: var(--font-family-public_sans);
+            font-size: 82px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .publicsans-bold-alto-20px {
+            color: var(--alto);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .caveat-bold-snow-flurry-20px {
+            color: var(--illustrationnew);
+            font-family: var(--font-family-caveat);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .leaguespartan-light-alto-28px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .leaguespartan-medium-alto-32px {
+            color: var(--alto);
+            font-family: var(--font-family-league_spartan);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .publicsans-normal-star-dust-20px {
+            color: var(--star-dust);
+            font-family: var(--font-family-public_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .leaguespartan-normal-alto-40px {
+            color: var(--alto-3);
+            font-family: var(--font-family-league_spartan);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-bold-blue-chill-24px {
+            color: var(--blue-chill);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .lato-normal-silver-16px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .lato-bold-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .lato-extra-bold-silver-20px {
+            color: var(--silver);
+            font-family: var(--font-family-lato);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .frame-2 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            justify-content: center;
+            position: relative;
+        }
+
+        .frame-3 {
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .footer-frame-5 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            position: relative;
+        }
+
+        .layer_1 {
+            background-color: transparent;
+            position: absolute;
+        }
+
+        .frame-48 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+
+        .rectangle-8 {
+            align-self: stretch;
+            border-radius: 12px;
+            height: 94px;
+            position: relative;
+            width: 100%;
+        }
+
+        /* screen - epitome */
+
+        .epitome {
+            background-color: var(--base-colour);
+            height: 9298px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 1440px;
+        }
+
+        .epitome .frame-3-jpxvkv {
+            display: flex;
+            justify-content: space-between;
+            left: 114px;
+            position: absolute;
+            top: 60px;
+            width: 1212px;
+        }
+
+        .epitome .vector-2KTb9s {
+            background-color: transparent;
+            height: 77.9747314453125px;
+            position: relative;
+            width: 80px;
+        }
+
+        .epitome .frame-2-2KTb9s {
+            gap: 36px;
+        }
+
+        .epitome .frame-2-kYd3eF {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .epitome .home-bvPamh {
+            background-color: transparent;
+            cursor: pointer;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .frame-3-kYd3eF {
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .epitome .work-2FSxWf {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .ellipse-1-2FSxWf {
+            background-color: var(--alto-2);
+            border-radius: 3px;
+            height: 6px;
+            position: relative;
+            width: 6px;
+        }
+
+        .epitome .contact-kYd3eF {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .title-jpxvkv {
+            background-color: transparent;
+            height: auto;
+            left: 278px;
+            letter-spacing: 0.00px;
+            line-height: 67px;
+            position: absolute;
+            text-align: left;
+            top: 390px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .epitome .introducing-epitome-jpxvkv {
+            background-color: transparent;
+            height: auto;
+            left: 336px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 502px;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .epitome .published-december-12th-2023-jpxvkv {
+            background-color: transparent;
+            height: auto;
+            left: 179px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 582px;
+            width: 1083px;
+        }
+
+        .epitome .layer_1-jpxvkv {
+            height: 788px;
+            left: 114px;
+            overflow: hidden;
+            top: 705px;
+            width: 1212px;
+        }
+
+        .epitome .clip-path-group-c02PX4 {
+            background-color: transparent;
+            height: 788px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1212px;
+        }
+
+        .epitome .frame-490-jpxvkv {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 119px;
+            left: 307px;
+            position: absolute;
+            top: 1647px;
+        }
+
+        .epitome .group-1451-W3cn7J {
+            background-color: transparent;
+            height: 406px;
+            position: relative;
+            width: 196px;
+        }
+
+        .epitome .frame-487-6oJ5x7 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 0px;
+            position: absolute;
+            top: 276px;
+            width: 196px;
+        }
+
+        .epitome .pastel-red-WTEbot {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .df5053-xDY42N {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .x2238083-MF5xxx {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .rectangle-200-6oJ5x7 {
+            background-color: #df5053;
+            border-radius: 98px 98px 0px 0px;
+            height: 268px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 196px;
+        }
+
+        .epitome .rectangle-203-6oJ5x7 {
+            background-color: #df5053;
+            height: 19px;
+            left: 0px;
+            position: absolute;
+            top: 387px;
+            width: 196px;
+        }
+
+        .epitome .group-1453-W3cn7J {
+            background-color: transparent;
+            height: 406px;
+            position: relative;
+            width: 196px;
+        }
+
+        .epitome .frame-488-5VgfcN {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 0px;
+            position: absolute;
+            top: 276px;
+            width: 196px;
+        }
+
+        .epitome .sea-pink-RtA3Mn {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .eaa0-a3-EH78o8 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .x234160163-b3RyM6 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .rectangle-201-5VgfcN {
+            background-color: #eaa0a3;
+            border-radius: 98px 98px 0px 0px;
+            height: 268px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 196px;
+        }
+
+        .epitome .rectangle-204-5VgfcN {
+            background-color: #eaa0a3;
+            height: 19px;
+            left: 0px;
+            position: absolute;
+            top: 387px;
+            width: 196px;
+        }
+
+        .epitome .group-1452-W3cn7J {
+            background-color: transparent;
+            height: 406px;
+            position: relative;
+            width: 196px;
+        }
+
+        .epitome .rectangle-202-A5sHMB {
+            background-color: #fff100;
+            border-radius: 98px 98px 0px 0px;
+            height: 268px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 196px;
+        }
+
+        .epitome .frame-489-A5sHMB {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 0px;
+            position: absolute;
+            top: 276px;
+            width: 196px;
+        }
+
+        .epitome .neon-yellow-0iob8z {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .fff100-vamUOP {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .x2552410-yxnOHV {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .rectangle-205-A5sHMB {
+            background-color: #fff100;
+            height: 19px;
+            left: 0px;
+            position: absolute;
+            top: 387px;
+            width: 196px;
+        }
+
+        .epitome .epitome-magazine_com-jpxvkv {
+            height: 397px;
+            left: 395px;
+            top: 2248px;
+            width: 280px;
+        }
+
+        .epitome .epitome-magazine_com-W36jVC {
+            height: 396px;
+            left: 114px;
+            top: 2248px;
+            width: 281px;
+        }
+
+        .epitome .rectangle-206-jpxvkv {
+            background-color: var(--yellow-sunshine);
+            height: 50px;
+            left: 142px;
+            position: absolute;
+            top: 2222px;
+            width: 24px;
+        }
+
+        .epitome .epitome-magazine_com-gwC3Od {
+            height: 396px;
+            left: 114px;
+            top: 2661px;
+            width: 281px;
+        }
+
+        .epitome .epitome-magazine_com-1zdtN4 {
+            height: 396px;
+            left: 395px;
+            top: 2661px;
+            width: 280px;
+        }
+
+        .epitome .group-1454-jpxvkv {
+            background-color: transparent;
+            height: 835px;
+            left: 724px;
+            position: absolute;
+            top: 2222px;
+            width: 1144px;
+        }
+
+        .epitome .epitome-magazine_com-G4o37i {
+            height: 809px;
+            left: 0px;
+            top: 26px;
+            width: 572px;
+        }
+
+        .epitome .rectangle-207-G4o37i {
+            left: 28px;
+            top: 0px;
+        }
+
+        .epitome .epitome-magazine_com-AOfFmw {
+            height: 810px;
+            left: 572px;
+            top: 25px;
+            width: 572px;
+        }
+
+        .epitome .group-1455-jpxvkv {
+            background-color: transparent;
+            height: 835px;
+            left: -469px;
+            position: absolute;
+            top: 3095px;
+            width: 1144px;
+        }
+
+        .epitome .epitome-magazine_com-uhkmBU {
+            height: 809px;
+            left: 0px;
+            top: 26px;
+            width: 572px;
+        }
+
+        .epitome .rectangle-207-uhkmBU {
+            left: 28px;
+            top: 0px;
+        }
+
+        .epitome .epitome-magazine_com-n0TxPp {
+            height: 810px;
+            left: 572px;
+            top: 25px;
+            width: 572px;
+        }
+
+        .epitome .epitome-magazine_com-pSyBpE {
+            height: 396px;
+            left: 724px;
+            top: 3120px;
+            width: 281px;
+        }
+
+        .epitome .epitome-magazine_com-fxPcXy {
+            height: 396px;
+            left: 1005px;
+            top: 3120px;
+            width: 281px;
+        }
+
+        .epitome .rectangle-207-jpxvkv {
+            left: 753px;
+            top: 3095px;
+        }
+
+        .epitome .epitome-magazine_com-nCvHdb {
+            height: 396px;
+            left: 724px;
+            top: 3534px;
+            width: 281px;
+        }
+
+        .epitome .epitome-magazine_com-wsP2tP {
+            height: 396px;
+            left: 1005px;
+            top: 3534px;
+            width: 281px;
+        }
+
+        .epitome .layer_1-W36jVC {
+            height: 42px;
+            left: 230px;
+            top: 4115px;
+            width: 62px;
+        }
+
+        .epitome .layer_1-gwC3Od {
+            height: 42px;
+            left: 1117px;
+            top: 4170px;
+            width: 62px;
+        }
+
+        .epitome .journey-through-a-co-jpxvkv {
+            background-color: transparent;
+            height: auto;
+            left: 237px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: center;
+            top: 4118px;
+            width: 966px;
+        }
+
+        .epitome .red-is-a-bold-and-as-jpxvkv {
+            background-color: transparent;
+            height: auto;
+            left: 844px;
+            letter-spacing: 0.00px;
+            line-height: 29px;
+            position: absolute;
+            text-align: left;
+            top: 6164px;
+            width: 466px;
+        }
+
+        .epitome .asset-14x-100-1-jpxvkv {
+            background-color: transparent;
+            height: 1269px;
+            left: -68px;
+            object-fit: cover;
+            position: absolute;
+            top: 4352px;
+            width: 1577px;
+        }
+
+        .epitome .epitome-magazine_com-sB9tdY {
+            height: 827px;
+            left: 114px;
+            top: 5858px;
+            width: 586px;
+        }
+
+        .epitome .rectangle-208-jpxvkv {
+            background-color: var(--yellow-sunshine);
+            height: 66px;
+            left: 146px;
+            position: absolute;
+            top: 5830px;
+            width: 32px;
+        }
+
+        .epitome .asset-34x-100-1-jpxvkv {
+            background-color: transparent;
+            height: 1120px;
+            left: -120px;
+            object-fit: cover;
+            position: absolute;
+            top: 6863px;
+            width: 1681px;
+        }
+
+        .epitome .footer-container {
+            background-color: transparent;
+            height: 454px;
+            left: 114px;
+            position: absolute;
+            top: 8706px;
+            width: 1212px;
+        }
+
+        .epitome .footer-line {
+            background-color: var(--mirage);
+            border-radius: 32px;
+            height: 454px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1212px;
+        }
+
+        .epitome .footer-frame-1 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            left: 48px;
+            position: absolute;
+            top: 96px;
+            width: 572px;
+        }
+
+        .epitome .footer-eyes-line {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-left: -1.50px;
+            margin-right: -205.50px;
+            margin-top: -2.50px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .footer-connected-line {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-left: -1.50px;
+            position: relative;
+            text-align: left;
+        }
+
+        .epitome .footer-frame-2 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            left: 754px;
+            position: absolute;
+            top: 276px;
+            width: 410px;
+        }
+
+        .epitome .footer-email {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .epitome .footer-frame-3 {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .epitome .vector-5-9i2Yfy {
+            background-color: transparent;
+            height: 1px;
+            margin-top: -0.50px;
+            object-fit: cover;
+            position: relative;
+            width: 410px;
+        }
+
+        .epitome .footer-frame-4 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 24px;
+            position: relative;
+        }
+
+        .epitome .fi_3992590-EUAS1F {
+            background-color: transparent;
+            height: 32px;
+            position: relative;
+            width: 32px;
+        }
+
+        .epitome .behance-EUAS1F {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .fi_1051333-EawQaG {
+            background-color: transparent;
+            height: 32px;
+            position: relative;
+            width: 32px;
+        }
+
+        .epitome .linkedin-EawQaG {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .footer-vector {
+            background-color: transparent;
+            height: 83px;
+            left: 630px;
+            position: absolute;
+            top: 167px;
+            width: 112px;
+        }
+
+        .epitome .frame-491-jpxvkv {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+            left: 428px;
+            position: absolute;
+            top: 8206px;
+            width: 585px;
+        }
+
+        .epitome .frame-36-UfKFZD {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 28px;
+            position: relative;
+            width: 100%;
+        }
+
+        .epitome .more-9rq6yq {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 32px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+        }
+
+        .epitome .this-is-just-a-glimp-9rq6yq {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 26px;
+            position: relative;
+            text-align: center;
+            width: 507px;
+        }
+
+        .button-components-UfKFZD:hover{
+            transform: scale(1.1);
+        }
+
+        .epitome .button-components-UfKFZD {
+            align-items: center;
+            background-color: var(--main---lavender);
+            border-radius: 160px;
+            cursor: pointer;
+            display: flex;
+            gap: 5px;
+            height: 152px;
+            justify-content: center;
+            padding: 12px 24px;
+            position: relative;
+            width: 159px;
+        }
+
+        .epitome .all-projects-nQcdGx {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-left: -3.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .vuesaxbrokenarrow-right-nQcdGx {
+            background-color: transparent;
+            height: 24px;
+            margin-right: -3.00px;
+            position: relative;
+            width: 24px;
+        }
+
+        .epitome .epitome-magazine_com {
+            background-color: transparent;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .epitome .frame-483 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+        }
+
+        .epitome .frame-484 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+        }
+
+        .epitome .frame-485 {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            width: 100%;
+        }
+
+        .epitome .frame-486 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: var(--grey---text);
+            border-left-style: none;
+            border-right-style: none;
+            border-top-style: none;
+            display: flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            padding: 8px 0px 4px;
+            position: relative;
+            width: 100%;
+        }
+
+        .epitome .hex {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .epitome .rectangle-207 {
+            background-color: var(--yellow-sunshine);
+            height: 50px;
+            position: absolute;
+            width: 24px;
+        }
+
+        .epitome .rgb {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body style="margin: 0px; background: rgb(6, 11, 24); overflow-x: hidden;" dark-scroll=""><input type="hidden"
+        id="anPageName" name="page" value="epitome">
+    <div class="container-center-horizontal">
+        <div class="epitome screen " data-id="399:137">
+            <div class="frame-3-jpxvkv frame-3" data-id="399:138"><img class="vector-2KTb9s" data-id="399:139"
+                    src="img/vector-1.svg"
+                    alt="Vector">
+                <div class="frame-2-2KTb9s frame-2" data-id="399:140">
+                    <div class="frame-2-kYd3eF frame-2" data-id="399:141"><a href="index.html">
+                            <div class="home-bvPamh publicsans-semi-bold-dove-gray-20px" data-id="399:142"
+                                data-hotspot-id="hp-0">Home</div>
+                        </a></div>
+                    <div class="frame-3-kYd3eF frame-3" data-id="399:143">
+                        <div class="work-2FSxWf publicsans-semi-bold-white-20px" data-id="399:144">Work</div>
+                        <div class="ellipse-1-2FSxWf" data-id="399:145"></div>
+                    </div>
+                    <div class="contact-kYd3eF publicsans-medium-dove-gray-20px" data-id="399:146">Contact</div>
+                </div>
+            </div>
+            <h1 class="title-jpxvkv publicsans-bold-alto-82px" data-id="399:147">The Epitome Magazine</h1>
+            <p class="introducing-epitome-jpxvkv leaguespartan-light-alto-24px" data-id="399:149">Introducing "Epitome":
+                A Captivating Journey into Aesthetically Designed Spaces</p>
+            <div class="published-december-12th-2023-jpxvkv publicsans-semi-bold-snow-flurry-20px" data-id="399:150">
+                Published: December 12th, 2023</div>
+            <div class="layer_1-jpxvkv layer_1" data-id="399:368"><img class="clip-path-group-c02PX4" data-id="399:369"
+                    src="img/epitome-clip-path-group.png"
+                    alt="Clip path group"></div>
+            <div class="frame-490-jpxvkv" data-id="399:425">
+                <div class="group-1451-W3cn7J" data-id="399:409">
+                    <div class="frame-487-6oJ5x7" data-id="399:397">
+                        <div class="frame-486" data-id="399:396">
+                            <div class="pastel-red-WTEbot publicsans-bold-alto-20px" data-id="399:395">Pastel Red</div>
+                        </div>
+                        <div class="frame-485" data-id="399:394">
+                            <div class="frame-483" data-id="399:390">
+                                <div class="hex leaguespartan-normal-mountain-mist-16px" data-id="399:388">HEX</div>
+                                <div class="df5053-xDY42N leaguespartan-normal-mountain-mist-16px" data-id="399:389">
+                                    #DF5053</div>
+                            </div>
+                            <div class="frame-484" data-id="399:391">
+                                <div class="rgb leaguespartan-normal-mountain-mist-16px" data-id="399:392">RGB</div>
+                                <div class="x2238083-MF5xxx leaguespartan-normal-mountain-mist-16px" data-id="399:393">
+                                    223/80/83</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rectangle-200-6oJ5x7" data-id="399:382"></div>
+                    <div class="rectangle-203-6oJ5x7" data-id="399:387"></div>
+                </div>
+                <div class="group-1453-W3cn7J" data-id="399:424">
+                    <div class="frame-488-5VgfcN" data-id="399:398">
+                        <div class="frame-486" data-id="399:399">
+                            <div class="sea-pink-RtA3Mn publicsans-bold-alto-20px" data-id="399:400">Sea Pink</div>
+                        </div>
+                        <div class="frame-485" data-id="399:401">
+                            <div class="frame-483" data-id="399:402">
+                                <div class="hex leaguespartan-normal-mountain-mist-16px" data-id="399:403">HEX</div>
+                                <div class="eaa0-a3-EH78o8 leaguespartan-normal-mountain-mist-16px" data-id="399:404">
+                                    #EAA0A3</div>
+                            </div>
+                            <div class="frame-484" data-id="399:405">
+                                <div class="rgb leaguespartan-normal-mountain-mist-16px" data-id="399:406">RGB</div>
+                                <div class="x234160163-b3RyM6 leaguespartan-normal-mountain-mist-16px"
+                                    data-id="399:407">234/160/163</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rectangle-201-5VgfcN" data-id="399:385"></div>
+                    <div class="rectangle-204-5VgfcN" data-id="399:408"></div>
+                </div>
+                <div class="group-1452-W3cn7J" data-id="399:423">
+                    <div class="rectangle-202-A5sHMB" data-id="399:386"></div>
+                    <div class="frame-489-A5sHMB" data-id="399:411">
+                        <div class="frame-486" data-id="399:412">
+                            <div class="neon-yellow-0iob8z publicsans-bold-alto-20px" data-id="399:413">Neon Yellow
+                            </div>
+                        </div>
+                        <div class="frame-485" data-id="399:414">
+                            <div class="frame-483" data-id="399:415">
+                                <div class="hex leaguespartan-normal-mountain-mist-16px" data-id="399:416">HEX</div>
+                                <div class="fff100-vamUOP leaguespartan-normal-mountain-mist-16px" data-id="399:417">
+                                    #FFF100</div>
+                            </div>
+                            <div class="frame-484" data-id="399:418">
+                                <div class="rgb leaguespartan-normal-mountain-mist-16px" data-id="399:419">RGB</div>
+                                <div class="x2552410-yxnOHV leaguespartan-normal-mountain-mist-16px" data-id="399:420">
+                                    255/241/0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rectangle-205-A5sHMB" data-id="399:422"></div>
+                </div>
+            </div><img class="epitome-magazine_com-jpxvkv epitome-magazine_com" data-id="399:426"
+                src="img/epitome-magazine-compressed--1--page-0003-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0003 1"><img
+                class="epitome-magazine_com-W36jVC epitome-magazine_com" data-id="399:427"
+                src="img/epitome-magazine-compressed--1--page-0002-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0002 1">
+            <div class="rectangle-206-jpxvkv" data-id="399:428"></div><img
+                class="epitome-magazine_com-gwC3Od epitome-magazine_com" data-id="399:430"
+                src="img/epitome-magazine-compressed--1--page-0004-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0004 1"><img
+                class="epitome-magazine_com-1zdtN4 epitome-magazine_com" data-id="399:431"
+                src="img/epitome-magazine-compressed--1--page-0005-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0005 1">
+            <div class="group-1454-jpxvkv" data-id="399:435"><img
+                    class="epitome-magazine_com-G4o37i epitome-magazine_com" data-id="399:429"
+                    src="img/epitome-magazine-compressed--1--page-0008-1.png"
+                    alt="Epitome Magazine_compressed (1)_page-0008 1">
+                <div class="rectangle-207-G4o37i rectangle-207" data-id="399:432"></div><img
+                    class="epitome-magazine_com-AOfFmw epitome-magazine_com" data-id="399:433"
+                    src="img/epitome-magazine-compressed--1--page-0009-1.png"
+                    alt="Epitome Magazine_compressed (1)_page-0009 1">
+            </div>
+            <div class="group-1455-jpxvkv" data-id="399:436"><img
+                    class="epitome-magazine_com-uhkmBU epitome-magazine_com" data-id="399:437"
+                    src="img/epitome-magazine-compressed--1--page-0008-1.png"
+                    alt="Epitome Magazine_compressed (1)_page-0008 1">
+                <div class="rectangle-207-uhkmBU rectangle-207" data-id="399:438"></div><img
+                    class="epitome-magazine_com-n0TxPp epitome-magazine_com" data-id="399:439"
+                    src="img/epitome-magazine-compressed--1--page-0009-1.png"
+                    alt="Epitome Magazine_compressed (1)_page-0009 1">
+            </div><img class="epitome-magazine_com-pSyBpE epitome-magazine_com" data-id="399:440"
+                src="img/epitome-magazine-compressed--1--page-0014-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0014 1"><img
+                class="epitome-magazine_com-fxPcXy epitome-magazine_com" data-id="399:441"
+                src="img/epitome-magazine-compressed--1--page-0015-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0015 1">
+            <div class="rectangle-207-jpxvkv rectangle-207" data-id="399:442"></div><img
+                class="epitome-magazine_com-nCvHdb epitome-magazine_com" data-id="399:443"
+                src="img/epitome-magazine-compressed--1--page-0010-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0010 1"><img
+                class="epitome-magazine_com-wsP2tP epitome-magazine_com" data-id="399:444"
+                src="img/epitome-magazine-compressed--1--page-0011-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0011 1"><img class="layer_1-W36jVC layer_1" data-id="399:445"
+                src="img/layer-7.svg"
+                alt="Layer_1"><img class="layer_1-gwC3Od layer_1" data-id="399:462"
+                src="img/layer-7-rev.svg"
+                alt="Layer_1">
+            <p class="journey-through-a-co-jpxvkv leaguespartan-light-alto-24px" data-id="399:453">Journey through a
+                collection of abodes that are veritable symphonies of art and design, each one a testament to the power
+                of imagination and the boundless possibilities of creative living</p>
+            <p class="red-is-a-bold-and-as-jpxvkv leaguespartan-normal-alto-24px" data-id="399:473">Red is a bold and
+                assertive color that exudes confidence and strength. It symbolizes courage, determination, and the
+                willingness to make a statement. Choosing red for your magazine signifies that you're unafraid to stand
+                out and be noticed.</p><img class="asset-14x-100-1-jpxvkv" data-id="399:469"
+                src="img/asset-1-4x-100-1.png"
+                alt="Asset 1@4x-100 1"><img class="epitome-magazine_com-sB9tdY epitome-magazine_com" data-id="399:470"
+                src="img/epitome-magazine-compressed--1--page-0001-1.png"
+                alt="Epitome Magazine_compressed (1)_page-0001 1">
+            <div class="rectangle-208-jpxvkv" data-id="399:471"></div><img class="asset-34x-100-1-jpxvkv"
+                data-id="399:475"
+                src="img/asset-3-4x-100-1.png"
+                alt="Asset 3@4x-100 1">
+            <div class="footer-container" data-id="352:259">
+                <div class="footer-line" data-id="399:477"></div>
+                <div class="footer-frame-1" data-id="352:261">
+                    <p class="footer-eyes-line publicsans-black-white-48px" data-id="352:262">Eyes on us—time
+                    to lock them in!</p>
+                    <div class="footer-connected-line publicsans-semi-bold-studio-32px" data-id="352:263">Let’s stay
+                    connected!</div>
+                </div>
+                <div class="footer-frame-2" data-id="352:264">
+                    <div class="tooltip footer-email leaguespartan-medium-alto-28px" data-id="352:265" 
+                    id="shubhisharma0708gmailcom" onclick="copyEmailId()" onmouseout="outFunc()">
+                    Shubhisharma0708@gmail.com
+                    <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    </div>
+                    <div class="footer-frame-3" data-id="352:266">
+                    <div class="footer-frame-4" data-id="352:268">
+                        <a href="https://www.behance.net/shubhishar9bbd" target="_blank">
+                        <div class="footer-frame-5" data-id="352:269"><img class="fi_3992590-9Ht9Ij" data-id="352:270"
+                            src="img/behance.svg" alt="fi_3992590">
+                            <div class="behance-9Ht9Ij leaguespartan-normal-alto-20px" data-id="352:276">Behance</div>
+                        </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shubhangisharma07/" target="_blank">
+                        <div class="footer-frame-5" data-id="352:277"><img class="fi_1051333-4SDsI3" data-id="352:278"
+                            src="img/linkedin.svg" alt="fi_1051333">
+                            <div class="linkedin-4SDsI3 leaguespartan-normal-alto-20px" data-id="352:280">Linkedin</div>
+                        </div>
+                        </a>
+                    </div>
+                    </div>
+                </div><img class="footer-vector smart-layers-pointers" data-id="352:281" src="img/vector-15.svg"
+                    alt="Vector">
+            </div>
+            <div class="frame-491-jpxvkv" data-id="399:499">
+                <div class="frame-36-UfKFZD" data-id="399:500">
+                    <div class="more-9rq6yq leaguespartan-semi-bold-white-40px" data-id="399:501">More..</div>
+                    <p class="this-is-just-a-glimp-9rq6yq leaguespartan-light-alto-24px" data-id="399:502">This is just
+                        a glimpse—explore more to see the full spectrum of my work!</p>
+                </div><a href="work-pageu95user-first-creations">
+                    <div class="button-components-UfKFZD" data-id="399:503" data-hotspot-id="hp-1">
+                        <div class="all-projects-nQcdGx publicsans-semi-bold-blue-charcoal-16px" data-id="399:505">All
+                            Projects</div><img class="vuesaxbrokenarrow-right-nQcdGx" data-id="399:506"
+                            src="img/vuesax-broken-arrow-right.svg"
+                            alt="vuesax/broken/arrow-right">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

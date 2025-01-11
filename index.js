@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
         
-        document.querySelector('.timer-text').textContent = 
+        const timer = document.querySelector('#timer-text');
+        if (timer)
+            timer.textContent = 
             `Designing Since ${days} Days, ${hours} Hours, ${seconds} Seconds`;
     };
     

@@ -336,1190 +336,6 @@ input:focus {
     --font-family-public_sans: "Public Sans", Helvetica;
 }
 
-.leaguespartan-normal-alto-20px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.leaguespartan-normal-alto-24px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.leaguespartan-light-alto-24px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 300;
-}
-
-.leaguespartan-normal-white-14px {
-    font-family: var(--font-family-league_spartan);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.lato-normal-silver-20px {
-    color: var(--silver);
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.leaguespartan-medium-alto-28px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-l);
-    font-style: normal;
-    font-weight: 500;
-}
-
-.leaguespartan-extra-bold-studio-56px {
-    color: var(--illustration-purple);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xxxxl);
-    font-style: normal;
-    font-weight: 800;
-}
-
-.inter-bold-blue-chill-34px {
-    color: var(--blue-chill);
-    font-family: var(--font-family-inter);
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.publicsans-medium-dove-gray-20px {
-    color: var(--dove-gray);
-    font-family: var(--font-family-public_sans);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 500;
-}
-
-.leaguespartan-light-alto-20px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 300;
-}
-
-.publicsans-semi-bold-white-20px {
-    color: var(--white);
-    font-family: var(--font-family-public_sans);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 600;
-}
-
-.leaguespartan-bold-shark-26px {
-    color: var(--shark);
-    font-family: var(--font-family-league_spartan);
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 700;
-}
-
-.leaguespartan-medium-shark-20px {
-    color: var(--shark);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 500;
-}
-
-.publicsans-black-white-48px {
-    color: var(--white);
-    font-family: var(--font-family-public_sans);
-    font-size: var(--font-size-xxl);
-    font-style: normal;
-    font-weight: 900;
-}
-
-.publicsans-semi-bold-studio-32px {
-    color: var(--illustration-purple);
-    font-family: var(--font-family-public_sans);
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-}
-
-.publicsans-semi-bold-dove-gray-20px {
-    color: var(--dove-gray);
-    font-family: var(--font-family-public_sans);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 600;
-}
-
-.leaguespartan-normal-snow-flurry-14px {
-    color: var(--illustrationnew);
-    font-family: var(--font-family-league_spartan);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.leaguespartan-semi-bold-white-40px {
-    color: var(--white);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xl);
-    font-style: normal;
-    font-weight: 600;
-}
-
-.lato-normal-silver-24px {
-    color: var(--silver);
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.lato-semi-bold-black-haze-24px {
-    color: var(--black-haze);
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 600;
-}
-
-.lato-normal-thunder-16px {
-    color: var(--thunder);
-    font-family: var(--font-family-lato);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.leaguespartan-normal-alto-56px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xxxxl);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.caveat-bold-snow-flurry-20px {
-    color: var(--illustrationnew);
-    font-family: var(--font-family-caveat);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 700;
-}
-
-.leaguespartan-normal-alto-50px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xxxl);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.lato-bold-blue-chill-24px {
-    color: var(--blue-chill);
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 700;
-}
-
-.lato-normal-silver-16px {
-    color: var(--silver);
-    font-family: var(--font-family-lato);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.lato-bold-silver-20px {
-    color: var(--silver);
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 700;
-}
-
-.lato-extra-bold-silver-20px {
-    color: var(--silver);
-    font-family: var(--font-family-lato);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 800;
-}
-
-.leaguespartan-light-alto-28px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-l);
-    font-style: normal;
-    font-weight: 300;
-}
-
-.leaguespartan-medium-alto-32px {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-}
-
-.publicsans-normal-star-dust-20px {
-    color: var(--star-dust);
-    font-family: var(--font-family-public_sans);
-    font-size: var(--font-size-s);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.leaguespartan-normal-alto-40px {
-    color: var(--alto-3);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xl);
-    font-style: normal;
-    font-weight: 400;
-}
-
-.frame-2 {
-    align-items: center;
-    background-color: transparent;
-    display: inline-flex;
-    flex: 0 0 auto;
-    justify-content: center;
-    position: relative;
-}
-
-.frame-3 {
-    align-items: center;
-    background-color: transparent;
-}
-
-.frame-37 {
-    align-items: center;
-    background-color: transparent;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 8px;
-    position: relative;
-}
-
-/* screen - home-page */
-
-.home-page {
-    background-color: var(--base-colour);
-    height: 7750px;
-    overflow: hidden;
-    overflow-x: hidden;
-    position: relative;
-    width: 1440px;
-}
-
-.home-page .rectangle-4-xVxyAW {
-    left: 560px;
-    top: 5599px;
-}
-
-.home-page .samsung-galaxy-s21-phone-mockup-1-xVxyAW {
-    background-color: transparent;
-    height: 516px;
-    left: 639px;
-    position: absolute;
-    top: 5750px;
-    width: 623px;
-}
-
-.home-page .rectangle-6-xVxyAW {
-    background-color: var(--mirage);
-    height: 454px;
-    left: 114px;
-    top: 2530px;
-    width: 1212px;
-}
-
-.home-page .layer_1-xVxyAW {
-    height: 194px;
-    left: 114px;
-    top: 2672px;
-    width: 1211px;
-}
-
-.home-page .frame-43-xVxyAW {
-    left: 769px;
-    top: 2805px;
-}
-
-.home-page .frame-44-xxhOxV {
-    background-color: var(--blue-charcoal);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 20px;
-    padding: 3px 7px;
-    position: relative;
-    width: 20px;
-}
-
-.home-page .x3-ToEIIw {
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-left: -1.00px;
-    margin-right: -1.00px;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.home-page .rectangle-2-xVxyAW {
-    background-color: var(--mirage);
-    border-radius: 32px;
-    height: 454px;
-    left: 540px;
-    position: absolute;
-    top: 2036px;
-    width: 786px;
-}
-
-.home-page .rectangle-6-6iAz2g {
-    background-color: transparent;
-    border: 1px solid;
-    border-color: var(--fiord);
-    height: 551px;
-    left: 113px;
-    top: 5599px;
-    width: 407px;
-}
-
-.home-page .hello-my-name-is-shubhangi-and-i-am-a-xVxyAW {
-    background-color: transparent;
-    color: var(--white);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-l);
-    font-style: normal;
-    font-weight: 600;
-    height: auto;
-    left: 312px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 351px;
-    white-space: nowrap;
-    width: 817px;
-}
-
-.home-page .frame-34-xVxyAW {
-    align-items: center;
-    background-color: var(--mirage);
-    border-radius: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 696px;
-    justify-content: center;
-    left: 531px;
-    padding: 81px 74px;
-    position: absolute;
-    top: 1142px;
-    width: 795px;
-}
-
-.home-page .frame-5-c41qeB {
-    align-items: flex-start;
-    background-color: transparent;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 44px;
-    position: relative;
-    width: 629px;
-}
-
-.home-page .i-believe-design-sho-jJHzvr {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .span1-xim0dh {
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xxxxl);
-    font-style: normal;
-    font-weight: 800;
-}
-
-.home-page .frame-6-jJHzvr {
-    align-items: flex-start;
-    align-self: stretch;
-    background-color: transparent;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 24px;
-    position: relative;
-    width: 100%;
-}
-
-.home-page .my-design-journey-it-inxXd8 {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: 26px;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .when-im-not-designin-inxXd8 {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: 26px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .frame-13-xVxyAW {
-    align-items: center;
-    background-color: transparent;
-    display: inline-flex;
-    gap: 140px;
-    left: 617px;
-    position: absolute;
-    top: 2108px;
-}
-
-.home-page .frame-9-xTBTVI {
-    align-items: flex-start;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    position: relative;
-    width: 260px;
-}
-
-.home-page .product-design-x5NdEx {
-    align-self: stretch;
-    background-color: transparent;
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xl);
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .frame-7-x5NdEx {
-    align-items: flex-start;
-    background-color: transparent;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
-    width: 206px;
-}
-
-.home-page .user-research-ieWuxm {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .user-experience-design-ieWuxm {
-    align-self: stretch;
-    position: relative;
-}
-
-.home-page .user-interface-design-ieWuxm {
-    align-self: stretch;
-    position: relative;
-}
-
-.home-page .prototyping-ieWuxm {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .frame-10-xTBTVI {
-    align-items: flex-start;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    position: relative;
-    width: 232px;
-}
-
-.home-page .brand-design-fVH9SQ {
-    align-self: stretch;
-    background-color: transparent;
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-xl);
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .frame-8-fVH9SQ {
-    align-items: flex-start;
-    background-color: transparent;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
-    width: 206px;
-}
-
-.home-page .visual-identity-iwT99u {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .brand-collaterals-iwT99u {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .print-digital-design-iwT99u {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .photography-iwT99u {
-    align-self: stretch;
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: relative;
-    text-align: left;
-}
-
-.home-page .my-design-process-xVxyAW {
-    background-color: transparent;
-    color: var(--alto);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 600;
-    height: auto;
-    left: 1081px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: right;
-    top: 2576px;
-    width: 206px;
-}
-
-
-.home-page .frame-3-xVxyAW {
-    align-items: center;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    left: 114px;
-    position: absolute;
-    top: 60px;
-    width: 1212px;
-}
-
-.home-page .vector-856wDK {
-    background-color: transparent;
-    height: 77.9747314453125px;
-    position: relative;
-    width: 80px;
-}
-
-.home-page .frame-1-856wDK {
-    align-items: center;
-    background-color: transparent;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 36px;
-    justify-content: center;
-    position: relative;
-}
-
-.home-page .frame-2-4YxH12 {
-    align-items: center;
-    background-color: transparent;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 8px;
-    justify-content: center;
-    position: relative;
-}
-
-.home-page .home-9FyA5F {
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.home-page .ellipse-1-9FyA5F {
-    background-color: var(--alto-2);
-    border-radius: 3px;
-    height: 6px;
-    position: relative;
-    width: 6px;
-}
-
-.home-page .work-4YxH12 {
-    cursor: pointer;
-    position: relative;
-    width: fit-content;
-}
-
-.home-page .contact-4YxH12 {
-    background-color: transparent;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.home-page .vector-xVxyAW {
-    background-color: transparent;
-    height: 50px;
-    left: 969px;
-    position: absolute;
-    top: 357px;
-    width: 108px;
-}
-
-.home-page .user-experience-design-xVxyAW {
-    height: auto;
-    left: 1061px;
-    position: absolute;
-    top: 326px;
-    transform: rotate(-12.52deg);
-    width: auto;
-}
-
-.home-page .user-interface-design-xVxyAW {
-    height: auto;
-    left: 177px;
-    position: absolute;
-    top: 506px;
-    transform: rotate(-2.82deg);
-    width: auto;
-}
-
-.home-page .vector-6iAz2g {
-    background-color: transparent;
-    height: 42px;
-    left: 148px;
-    position: absolute;
-    top: 481px;
-    width: 70px;
-}
-
-.home-page .rectangle-1-xVxyAW {
-    background-color: var(--mirage);
-    border-radius: 32px;
-    height: 337px;
-    left: 114px;
-    position: absolute;
-    top: 765px;
-    width: 1212px;
-}
-
-.home-page .button-components-xVxyAW {
-    gap: 10px;
-    height: 190px;
-    left: 622px;
-    position: absolute;
-    top: 633px;
-    width: 197px;
-}
-
-.home-page .browse-resume-rvFESq {
-    background-color: transparent;
-    color: var(--base-colour);
-    font-family: var(--font-family-public_sans);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 0.00px;
-    line-height: 24px;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.home-page .frame-33-xVxyAW {
-    background-color: transparent;
-    height: 436px;
-    left: 114px;
-    position: absolute;
-    top: 1142px;
-    width: 377px;
-}
-
-.home-page .designing-since-720-xVxyAW {
-    background-color: transparent;
-    color: var(--illustrationnew);
-    font-family: var(--font-family-league_spartan);
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 700;
-    height: auto;
-    left: 365px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 917px;
-    white-space: nowrap;
-    width: auto;
-}
-
-.home-page .about-xVxyAW {
-    background-color: transparent;
-    color: var(--illustrationnew);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 500;
-    height: auto;
-    left: 114px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: left;
-    top: 1982px;
-    white-space: nowrap;
-    width: auto;
-}
-
-.home-page .work-xVxyAW {
-    color: var(--illustrationnew);
-    font-family: var(--font-family-league_spartan);
-    font-size: var(--font-size-m);
-    font-style: normal;
-    font-weight: 500;
-    height: auto;
-    left: 114px;
-    position: absolute;
-    top: 3137px;
-    width: auto;
-}
-
-.home-page .vector-4-xVxyAW {
-    background-color: transparent;
-    height: 1px;
-    left: 195px;
-    object-fit: cover;
-    position: absolute;
-    top: 1992px;
-    width: 1130px;
-}
-
-.home-page .vector-5-xVxyAW {
-    left: 178px;
-    position: absolute;
-    top: 3148px;
-    width: 1147px;
-}
-
-.home-page .vector-5-6iAz2g {
-    left: 114px;
-    position: absolute;
-    top: 4356px;
-    width: 1212px;
-}
-
-.home-page .vector-5-W6w6Ty {
-    left: 113px;
-    position: absolute;
-    top: 5458px;
-    width: 1212px;
-}
-
-.home-page .skills-xVxyAW {
-    background-color: transparent;
-    color: var(--white);
-    font-family: var(--font-family-public_sans);
-    font-size: 65px;
-    font-style: normal;
-    font-weight: 500;
-    height: auto;
-    left: 114px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: left;
-    top: 2035px;
-    white-space: nowrap;
-    width: auto;
-}
-
-.home-page .bringing-ideas-alive-xVxyAW {
-    background-color: transparent;
-    color: var(--white);
-    font-family: var(--font-family-public_sans);
-    font-size: var(--font-size-xxl);
-    font-style: normal;
-    font-weight: 500;
-    height: auto;
-    left: 114px;
-    letter-spacing: 0.00px;
-    line-height: normal;
-    position: absolute;
-    text-align: left;
-    top: 3186px;
-    white-space: nowrap;
-    width: auto;
-}
-
-.home-page .group-874-xVxyAW {
-    background-color: transparent;
-    height: 36px;
-    left: 1162px;
-    position: absolute;
-    top: 1462px;
-    width: 36px;
-}
-
-.home-page .frame-12-xVxyAW {
-    background-color: transparent;
-    height: 104px;
-    left: 595px;
-    position: absolute;
-    top: 2334px;
-    width: 675px;
-}
-
-.home-page .vector-W6w6Ty {
-    background-color: transparent;
-    height: 17px;
-    left: 986px;
-    position: absolute;
-    top: 1701px;
-    width: 12px;
-}
-
-.home-page .vector-leqMHY {
-    background-color: transparent;
-    height: 16px;
-    left: 998px;
-    position: absolute;
-    top: 1718px;
-    width: 11px;
-}
-
-.home-page .vector-2ILdFp {
-    background-color: transparent;
-    height: 78px;
-    left: 569px;
-    position: absolute;
-    top: 2082px;
-    width: 346px;
-}
-
-.home-page .vector-I9iWXx {
-    background-color: transparent;
-    height: 9px;
-    left: 1070px;
-    position: absolute;
-    top: 2142px;
-    width: 125px;
-}
-
-.home-page .vector-nNdBpk {
-    background-color: transparent;
-    height: 22px;
-    left: 1247px;
-    position: absolute;
-    top: 2100px;
-    width: 21px;
-}
-
-.home-page .vuesaxbrokenarrow-right-ETqiz8 {
-    margin-left: -1.00px;
-    margin-right: -1.00px;
-}
-
-.home-page .the-flores-cart-xVxyAW {
-    background-color: transparent;
-    height: auto;
-    left: 151px;
-    letter-spacing: 0.00px;
-    line-height: 42px;
-    position: absolute;
-    text-align: left;
-    top: 5692px;
-    width: 332px;
-}
-
-.home-page .the-flores-cart-is-y-xVxyAW {
-    background-color: transparent;
-    height: auto;
-    left: 151px;
-    letter-spacing: 0.00px;
-    line-height: 26px;
-    position: absolute;
-    text-align: left;
-    top: 5762px;
-    width: 316px;
-}
-
-.home-page .rectangle-6-W6w6Ty {
-    background-color: transparent;
-    border: 1px solid;
-    border-color: var(--fiord);
-    height: 551px;
-    left: 919px;
-    top: 4496px;
-    width: 407px;
-}
-
-.home-page .rectangle-4-6iAz2g {
-    left: 114px;
-    top: 4496px;
-}
-
-.home-page .button-components-W6w6Ty {
-    gap: 10px;
-    height: 70px;
-    left: 1208px;
-    position: absolute;
-    top: 4929px;
-    width: 70px;
-}
-
-.home-page .vuesaxbrokenarrow-right-9Qy34h {
-    margin-left: -1.00px;
-    margin-right: -1.00px;
-}
-
-.home-page .epitome-magazine-xVxyAW {
-    background-color: transparent;
-    height: auto;
-    left: 957px;
-    letter-spacing: 0.00px;
-    line-height: 32px;
-    position: absolute;
-    text-align: left;
-    top: 4614px;
-    width: 332px;
-}
-
-.home-page .epitome-magazine-exp-xVxyAW {
-    background-color: transparent;
-    height: auto;
-    left: 957px;
-    letter-spacing: 0.00px;
-    line-height: 26px;
-    position: absolute;
-    text-align: left;
-    top: 4674px;
-    width: 332px;
-}
-
-.home-page .frame-24-xVxyAW {
-    left: 151px;
-    top: 5913px;
-}
-
-.home-page .rectangle-6-leqMHY {
-    background-color: transparent;
-    border: 1px solid;
-    border-color: var(--fiord);
-    height: 551px;
-    left: 114px;
-    top: 3393px;
-    width: 407px;
-}
-
-.home-page .rectangle-4-W6w6Ty {
-    left: 561px;
-    top: 3393px;
-}
-
-
-.home-page .vuesaxbrokenarrow-right-30Ehvh {
-    margin-left: -1.00px;
-    margin-right: -1.00px;
-}
-
-.home-page .x202-1-xVxyAW {
-    background-color: transparent;
-    height: 635px;
-    left: 672px;
-    position: absolute;
-    top: 3581px;
-    width: 604px;
-}
-
-.home-page .smart-pix-pro-xVxyAW {
-    background-color: transparent;
-    height: auto;
-    left: 152px;
-    letter-spacing: 0.00px;
-    line-height: 32px;
-    position: absolute;
-    text-align: left;
-    top: 3486px;
-    width: 332px;
-}
-
-.home-page .go-to-image-editor-a-xVxyAW {
-    background-color: transparent;
-    height: auto;
-    left: 152px;
-    letter-spacing: 0.00px;
-    line-height: 26px;
-    position: absolute;
-    text-align: left;
-    top: 3546px;
-    width: 309px;
-}
-
-.home-page .group-882-xVxyAW {
-    background-color: transparent;
-    height: 30px;
-    left: 413px;
-    position: absolute;
-    top: 3464px;
-    width: 29px;
-}
-
-.home-page .vector-hVgXrX {
-    background-color: transparent;
-    height: 50px;
-    left: 838px;
-    position: absolute;
-    top: 3623px;
-    width: 68px;
-}
-
-.home-page .frame-24-6iAz2g {
-    left: 152px;
-    top: 3695px;
-}
-
-
-
-.home-page .group-885-xVxyAW {
-    background-color: transparent;
-    height: 37px;
-    left: 1242px;
-    position: absolute;
-    top: 5777px;
-    width: 31px;
-}
-
-.home-page .vector-Xf0S27 {
-    background-color: transparent;
-    height: 43px;
-    left: 419px;
-    position: absolute;
-    top: 5661px;
-    width: 33px;
-}
-
-.home-page .e4afda79-b83a-448a-b064-d5ac3c1eb5b5-1-xVxyAW {
-    background-color: transparent;
-    height: 670px;
-    left: 114px;
-    position: absolute;
-    top: 4594px;
-    width: 715px;
-}
-
-.home-page .group-886-xVxyAW {
-    background-color: transparent;
-    height: 41px;
-    left: 1235px;
-    position: absolute;
-    top: 4573px;
-    width: 35px;
-}
-
-.home-page .frame-35-xVxyAW {
-    align-items: center;
-    background-color: transparent;
-    display: inline-flex;
-    gap: 12px;
-    left: 957px;
-    position: absolute;
-    top: 4797px;
-}
-
-.home-page .frame-42-xVxyAW {
-    align-items: center;
-    background-color: transparent;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 55px;
-    left: 428px;
-    pointer-events: auto;
-    position: absolute;
-    top: 6605px;
-    transition: all 0.2s ease;
-    width: 585px;
-}
 
 .home-page .frame-36-dpj9li {
     align-items: center;
@@ -2404,7 +1220,7 @@ input:focus {
   background-color: transparent;
 }
 
-.frame-37 {
+.footer-frame-5 {
   align-items: center;
   background-color: transparent;
   display: inline-flex;
@@ -3525,7 +2341,6 @@ color:var(--illustrationnew);
 }
 
 .home-page .eyes-on-ustime-to-lock-them-in-q0Vv36 {
-  color: var(--white);
   background-color: transparent;
   letter-spacing: 0.00px;
   line-height: normal;
@@ -4460,7 +3275,7 @@ input:focus {
   background-color: transparent;
 }
 
-.frame-37 {
+.footer-frame-5 {
   align-items: center;
   background-color: transparent;
   display: inline-flex;
@@ -4567,94 +3382,104 @@ input:focus {
   width: fit-content;
 }
 
-.work-pageu95user-first-creations .group-1447-yf01o3 {
-  background-color: transparent;
-  height: 454px;
-  left: 114px;
-  position: absolute;
-  top: 3648px;
-  width: 1212px;
+.work-pageu95user-first-creations {
+  .footer-container {
+    background-color: transparent;
+    height: 454px;
+    left: 114px;
+    position: absolute;
+    top: 3648px;
+    width: 1212px;
+  }
+  
+  .footer-line {
+    background-color: var(--mirage);
+    border-radius: 32px;
+    height: 454px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 1212px;
+  }
+  
+  .footer-frame-1 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 48px;
+    position: absolute;
+    top: 96px;
+    width: 572px;
+  }
+  
+  .footer-eyes-line {
+    color:  var(--white);
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    margin-left: -1.50px;
+    margin-right: -205.50px;
+    margin-top: -2.50px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .footer-connected-line {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    margin-left: -1.50px;
+    position: relative;
+    text-align: left;
+  }
+  
+  .footer-frame-2 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    left: 754px;
+    position: absolute;
+    top: 276px;
+    width: 410px;
+  }
+  
+  .footer-email {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+  }
+  
+  .footer-frame-3 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+  }
 }
-
-.work-pageu95user-first-creations .rectangle-6-izrCFB {
-  background-color: var(--mirage);
-  border-radius: 32px;
-  height: 454px;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 1212px;
-}
-
-.work-pageu95user-first-creations .frame-38-izrCFB {
-  align-items: flex-start;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  left: 48px;
-  position: absolute;
-  top: 96px;
-  width: 572px;
-}
-
-.work-pageu95user-first-creations .eyes-on-ustime-to-lock-them-in-2cxekF {
-  color:  var(--white);
-  background-color: transparent;
-  letter-spacing: 0.00px;
-  line-height: normal;
-  margin-left: -1.50px;
-  margin-right: -205.50px;
-  margin-top: -2.50px;
-  position: relative;
-  text-align: left;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-.work-pageu95user-first-creations .lets-stay-connected-2cxekF {
-  align-self: stretch;
-  background-color: transparent;
-  letter-spacing: 0.00px;
-  line-height: normal;
-  margin-left: -1.50px;
-  position: relative;
-  text-align: left;
-}
-
-.work-pageu95user-first-creations .frame-41-izrCFB {
-  align-items: flex-start;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  left: 754px;
-  position: absolute;
-  top: 276px;
-  width: 410px;
-}
-
-.work-pageu95user-first-creations .shubhisharma0708gmailcom-ppFMwx {
-  align-self: stretch;
-  background-color: transparent;
-  letter-spacing: 0.00px;
-  line-height: 26px;
-  margin-top: -1.00px;
-  position: relative;
-  text-align: left;
-}
-
-.work-pageu95user-first-creations .frame-40-ppFMwx {
-  align-items: flex-start;
-  align-self: stretch;
-  background-color: transparent;
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;
-  width: 100%;
-}
+  .footer-frame-5 {
+    align-items: center;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+  }
 
 .work-pageu95user-first-creations .vector-5-0a3f3M {
   background-color: transparent;
@@ -4665,7 +3490,7 @@ input:focus {
   width: 410px;
 }
 
-.work-pageu95user-first-creations .frame-39-0a3f3M {
+.work-pageu95user-first-creations .footer-frame-4 {
   align-items: center;
   background-color: transparent;
   display: inline-flex;
@@ -4708,7 +3533,7 @@ input:focus {
   width: fit-content;
 }
 
-.work-pageu95user-first-creations .vector-izrCFB {
+.work-pageu95user-first-creations .footer-vector {
   background-color: transparent;
   height: 83px;
   left: 630px;
