@@ -16,8 +16,8 @@
     src: url('fonts/avenirltprolight.otf') format("opentype");
 }
 
-html, body {
-    cursor: url("cursor.ico"), default;
+html, body, body:hover {
+    cursor: url("img/cursor.png"), default;
 }
 
 /* SCROLLBAR */
@@ -56,45 +56,6 @@ html, body {
 
 [data-id].ui-selected {
     box-shadow: inset 0 0 0 1px #4285f4 !important;
-}
-
-/* CURSOR */
-
-body[mode='comments'] * {
-    cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K') 0 24,
-        auto !important;
-}
-
-body[mode='code'] [data-id]:not(.hidden) {
-    cursor: default;
-}
-
-/* default node state */
-
-body[mode='code'] [data-id]:not(.hidden),
-body[mode='comments'] [data-id]:not(.hidden) {
-    pointer-events: all;
-}
-
-/* is_image */
-
-body[mode='code'] [data-id].is_image [data-id],
-body[mode='comments'] [data-id].is_image [data-id] {
-    pointer-events: none !important;
-}
-
-/* without a data-id or ignored */
-
-[data-id].ignore,
-body[mode='code'] *:not([data-id]) {
-    pointer-events: none !important;
-}
-
-/* disable transforms for ignored elements */
-
-
-body[mode='code'] [data-id]:hover {
-    transform: none !important;
 }
 
 .screen textarea:focus,
