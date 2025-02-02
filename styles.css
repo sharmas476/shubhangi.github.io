@@ -234,12 +234,6 @@ input:focus {
     visibility: hidden;
 }
 
-.smart-layers-pointers,
-.smart-layers-pointers * {
-    pointer-events: auto;
-    visibility: visible;
-}
-
 .listeners-active-click,
 .listeners-active-click * {
     cursor: pointer;
@@ -297,19 +291,6 @@ input:focus {
     --font-family-public_sans: "Public Sans", Helvetica;
 }
 
-
-.home-page .frame-36-dpj9li {
-    align-items: center;
-    align-self: stretch;
-    background-color: transparent;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 28px;
-    position: relative;
-    width: 100%;
-}
-
 .home-page .more-dV1ayA {
     align-self: stretch;
     background-color: transparent;
@@ -355,15 +336,6 @@ input:focus {
 
 .home-page .vuesaxbrokenarrow-right-VKedMp {
     margin-right: -3.00px;
-}
-
-.home-page .group-1447-xVxyAW {
-    background-color: transparent;
-    height: 454px;
-    left: 115px;
-    position: absolute;
-    top: 7158px;
-    width: 1212px;
 }
 
 .home-page .rectangle-6-2uJLtY {
@@ -706,13 +678,6 @@ input:focus {
     object-fit: cover;
 }
 
-.home-page .vuesaxbrokenarrow-right {
-    background-color: transparent;
-    height: 24px;
-    position: relative;
-    width: 24px;
-}
-
 .home-page .work {
     background-color: transparent;
     letter-spacing: 0.00px;
@@ -895,12 +860,6 @@ input:focus {
 .hidden * {
   pointer-events: none;
   visibility: hidden;
-}
-
-.smart-layers-pointers,
-.smart-layers-pointers * {
-  pointer-events: auto;
-  visibility: visible;
 }
 
 .listeners-active-click,
@@ -2275,6 +2234,7 @@ color:var(--illustrationnew);
 .home-page .group-1447-xVxyAW {
   background-color: var(--mirage);
   height: 454px;
+  border-radius: 32px;
   left: 115px;
   position: absolute;
   top: 7158px;
@@ -2299,6 +2259,15 @@ color:var(--illustrationnew);
   position: absolute;
   top: 96px;
   width: 572px;
+}
+
+.home-page .frame-37 {
+  align-items: center;
+  background-color: transparent;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
 }
 
 .home-page .eyes-on-ustime-to-lock-them-in-q0Vv36 {
@@ -2902,12 +2871,6 @@ input:focus {
 .hidden * {
   pointer-events: none;
   visibility: hidden;
-}
-
-.smart-layers-pointers,
-.smart-layers-pointers * {
-  pointer-events: auto;
-  visibility: visible;
 }
 
 .listeners-active-click,
