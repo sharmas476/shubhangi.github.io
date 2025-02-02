@@ -2273,7 +2273,7 @@ color:var(--illustrationnew);
 }
 
 .home-page .group-1447-xVxyAW {
-  background-color: transparent;
+  background-color: var(--mirage);
   height: 454px;
   left: 115px;
   position: absolute;
